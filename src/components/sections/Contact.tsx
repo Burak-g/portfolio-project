@@ -12,7 +12,7 @@ export default function Contact() {
 
         <div className="stack-sm">
           <p className="font-bold">Lyder det som et match?</p>
-          <p className="text-muted mx-auto max-w-3xl text-center">
+          <p className="text-muted max-w-3xl text-start">
             Uanset om du har spørgsmål, idéer eller bare vil tage en snak – så ræk endelig ud. Jeg
             er altid åben for nye forbindelser og spændende muligheder.
           </p>
