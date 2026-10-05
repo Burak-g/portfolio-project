@@ -77,6 +77,12 @@
   .custom-pixel-card img { width: 100%; height: 100%; object-fit: cover; }
 }
 
+.portrait-touch-hint { display: none; }
+@media (hover: none), (pointer: coarse) {
+  .portrait-hover-hint { display: none; }
+  .portrait-touch-hint { display: inline; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }

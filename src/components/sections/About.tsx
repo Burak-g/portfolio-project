@@ -5,7 +5,7 @@ import PixelTransition from '../ui/PixelTransition';
 export default function About() {
   return (
     <div className="container-wide">
-      <div className="flex flex-col gap-10 md:flex-row md:items-start">
+      <div className="flex flex-col gap-12 md:flex-row md:items-center lg:gap-20">
         {/* Left: text */}
         <div className="min-w-0 md:w-1/2">
           <div className="stack">
@@ -36,34 +36,53 @@ export default function About() {
               mig at tænke i mennesker, brugeroplevelser og forretningsmæssige behov – perspektiver,
               som jeg i dag kombinerer med det tekniske.
             </p>
-
           </div>
         </div>
 
         {/* Right: image / pixel transition */}
-        <div className="flex min-w-0 justify-center md:w-1/2 md:justify-end">
-          <PixelTransition
-            firstContent={<img src={portraitImg} alt="Portræt af Burak" />}
-            secondContent={
-              <div
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  display: 'grid',
-                  placeItems: 'center',
-                  backgroundColor: '#111',
-                }}>
-                <img src={pixelImg} alt="Portræt af Burak" />
-              </div>
-            }
-            gridSize={24}
-            pixelColor="#526b91"
-            animationStepDuration={0.4}
-            className="custom-pixel-card"
-          />
+        <div className="flex min-w-0 justify-center md:w-1/2">
+          <figure className="relative w-full max-w-80 pt-16">
+            <figcaption className="text-signal pointer-events-none absolute top-0 left-0 flex w-full items-start justify-end gap-3">
+              <span className="pt-1 font-mono text-xs tracking-wide">
+                <span className="portrait-hover-hint">Hold musen over mig</span>
+                <span className="portrait-touch-hint">Tryk på mig</span>
+              </span>
+              <svg
+                className="h-14 w-14 shrink-0"
+                viewBox="0 0 56 56"
+                fill="none"
+                aria-hidden="true">
+                <path
+                  d="M4 8H24L42 26V50M34 42L42 50L50 42"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinejoin="miter"
+                />
+              </svg>
+            </figcaption>
+            <PixelTransition
+              firstContent={<img src={portraitImg} alt="Portræt af Burak" />}
+              secondContent={
+                <div
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    display: 'grid',
+                    placeItems: 'center',
+                    backgroundColor: '#111',
+                  }}>
+                  <img src={pixelImg} alt="Portræt af Burak" />
+                </div>
+              }
+              gridSize={24}
+              pixelColor="#526b91"
+              animationStepDuration={0.4}
+              className="custom-pixel-card"
+              style={{ width: '100%' }}
+            />
+          </figure>
         </div>
       </div>
     </div>
   );
 }
-
