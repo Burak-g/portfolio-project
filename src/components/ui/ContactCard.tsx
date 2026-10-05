@@ -15,10 +15,10 @@ export default function ContactCard({ icon, title, value, href }: ContactCardPro
     <Card
       sx={{
         height: '100%',
-        borderRadius: 3,
-        paddingX: 4,
+        borderRadius: 1,
+        paddingX: 1,
         border: '1px solid',
-        borderColor: 'primary.main',
+        borderColor: 'divider',
         backgroundColor: 'background.paper',
         transition: 'all 0.2s ease',
         '&:hover': {
@@ -50,7 +50,7 @@ export default function ContactCard({ icon, title, value, href }: ContactCardPro
             rel="noopener noreferrer"
             sx={{
               color: 'text.secondary',
-              textDecoration: 'underline',
+              textDecoration: 'underline', overflowWrap: 'anywhere',
               '&:hover': {
                 color: 'primary.main',
               },
@@ -64,3 +64,4 @@ export default function ContactCard({ icon, title, value, href }: ContactCardPro
     </Card>
   );
 }
+

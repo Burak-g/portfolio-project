@@ -12,9 +12,9 @@ export default function TechCard({ category }: Props) {
   return (
     <Card
       sx={{
-        minWidth: 275,
+        minWidth: 0,
         bgcolor: 'background.paper',
-        borderRadius: '8px',
+        borderRadius: '3px',
       }}>
       <CardContent>
         <Typography
@@ -44,3 +44,4 @@ export default function TechCard({ category }: Props) {
     </Card>
   );
 }
+

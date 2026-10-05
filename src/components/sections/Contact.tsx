@@ -20,7 +20,7 @@ export default function Contact() {
       </header>
 
       <div className="section-content">
-        <div className="grid gap-12 sm:grid-cols-2 md:grid-cols-3">
+        <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
           <ContactCard
             icon={<FontAwesomeIcon icon={faPhone} />}
             title="Telefon"
@@ -36,7 +36,7 @@ export default function Contact() {
           <ContactCard
             icon={<FontAwesomeIcon icon={faSquareLinkedin} />}
             title="LinkedIn"
-            value="+45 50 66 72 53"
+            value="Burak Gültekin"
             href="https://www.linkedin.com/in/burak-gultekin/"
           />
         </div>
@@ -44,3 +44,4 @@ export default function Contact() {
     </div>
   );
 }
+

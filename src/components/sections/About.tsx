@@ -44,7 +44,7 @@ export default function About() {
               </div>
             }
             gridSize={24}
-            pixelColor="#14b8a6"
+            pixelColor="#526b91"
             animationStepDuration={0.4}
             className="custom-pixel-card"
           />
@@ -53,3 +53,4 @@ export default function About() {
     </div>
   );
 }
+

@@ -11,8 +11,8 @@ import { styled } from '@mui/material/styles';
 import type { TimelineEntry } from '@/lib/timelineData';
 
 const ACCENT_BY_TYPE: Record<TimelineEntry['type'], string> = {
-  work: '#14b8a6',
-  education: '#6366f1',
+  work: '#e8bf4f',
+  education: '#91a8cb',
 };
 
 const CustomTimelineDot = styled(TimelineDot)<{ $accent: string }>(({ $accent }) => ({
@@ -77,3 +77,4 @@ export default function TimelineList({ entries }: TimelineListProps) {
     </Timeline>
   );
 }
+

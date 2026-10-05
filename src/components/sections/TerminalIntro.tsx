@@ -1,103 +1,57 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
-/**
- * Fake terminal intro that types out lines, then optionally calls onDone().
- * - Hides on small screens (≤767px) by default (matches your original CSS).
- * - Uses Tailwind for styling + a tiny bit of inline style for blink keyframes.
- */
+const defaultLines = [
+  '> Initializing Burak...\n',
+  '> Loading development toolkit...\n',
+  '> Connecting creativity + code...\n',
+  '> Portfolio systems online.\n',
+  '> Ready to build something great.',
+];
+
 type TerminalIntroProps = {
   lines?: string[];
-  typingSpeedMs?: number; // per character
-  lineDelayMs?: number; // delay between lines
-  autoHideWhenDone?: boolean; // fade out when finished
-  onDone?: () => void; // callback when typing completes
-  className?: string; // extra wrapper classes
+  typingSpeedMs?: number;
+  lineDelayMs?: number;
+  autoHideWhenDone?: boolean;
+  onDone?: () => void;
+  className?: string;
 };
 
-export default function TerminalIntro({
-  lines = [
-    '> Initializing Burak...\n',
-    '> Loading good vibes ☕\n',
-    '> Humor module booting up...\n',
-    '> Connecting to portfolio...\n',
-    '> Success: Ready to build cool stuff 💻',
-  ],
-  typingSpeedMs = 40,
-  lineDelayMs = 350,
-  autoHideWhenDone = false,
-  onDone,
-  className = '',
-}: TerminalIntroProps) {
-  const [output, setOutput] = useState('');
-  const [hidden, setHidden] = useState(false);
+export default function TerminalIntro({ lines = defaultLines, typingSpeedMs = 40, lineDelayMs = 350, autoHideWhenDone = false, onDone, className = '' }: TerminalIntroProps) {
   const text = useMemo(() => lines.join(''), [lines]);
-  const iRef = useRef(0);
-  const raf = useRef<number | null>(null);
+  const [length, setLength] = useState(0);
+  const [hidden, setHidden] = useState(false);
 
   useEffect(() => {
-    // Respect reduced motion
-    const prefersReduced =
-      typeof window !== 'undefined' &&
-      window.matchMedia &&
-      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
+    let index = 0;
+    let timer: number;
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const step = () => {
-      if (iRef.current < text.length) {
-        setOutput((prev) => prev + text.charAt(iRef.current));
-        iRef.current += 1;
-        const delay = prefersReduced ? 0 : typingSpeedMs;
-        raf.current = window.setTimeout(step, delay);
+      index = reduced ? text.length : index + 1;
+      setLength(index);
+      if (index < text.length) {
+        timer = window.setTimeout(step, text[index - 1] === '\n' ? lineDelayMs : typingSpeedMs);
       } else {
-        // done
-        if (autoHideWhenDone) {
-          // small delay so the user sees the last char
-          setTimeout(() => setHidden(true), 500);
-        }
         onDone?.();
+        if (autoHideWhenDone) timer = window.setTimeout(() => setHidden(true), 500);
       }
     };
-
-    // start typing - slight line delay between chunks
-    const start = () => {
-      if (!prefersReduced && lineDelayMs > 0) {
-        // simulate little pauses where there are line breaks
-        const run = () => {
-          step();
-          // we already handle speed inside step; this keeps API simple
-        };
-        run();
-      } else {
-        step();
-      }
-    };
-
-    start();
-    return () => {
-      if (raf.current) window.clearTimeout(raf.current);
-    };
+    timer = window.setTimeout(() => { setHidden(false); step(); }, 0);
+    return () => window.clearTimeout(timer);
   }, [text, typingSpeedMs, lineDelayMs, autoHideWhenDone, onDone]);
 
   return (
-    <div
-      className={[
-        // hide on small screens like your original CSS
-        'hidden lg:block',
-        hidden ? 'invisible opacity-0 transition-all duration-500' : 'visible opacity-100',
-        className,
-      ].join(' ')}>
-      {/* Fake terminal card */}
-      <div className="border-border bg-gray-gotham text-steel max-w-xl rounded-sm font-mono shadow-[0_0_24px_teal] dark:shadow-[0_0_24px_teal]">
-        <div className="text-gunmetal px-4 py-2 font-mono text-sm">burak@portfolio:~$</div>
-        <div
-          className="code px-4 py-3 text-sm leading-relaxed whitespace-pre-wrap"
-          aria-live="polite">
-          <span>{output}</span>
-          <span className="ml-0.5 inline-block animate-[blink_1s_steps(1,start)_infinite]">|</span>
+    <div className={`hidden lg:block ${hidden ? 'invisible' : ''} ${className}`}>
+      <div className="terminal-panel font-mono">
+        <div className="flex items-center justify-between border-b border-border px-6 py-4 text-xs text-gunmetal">
+          <span>BURAK / SYSTEM CONSOLE</span><span className="text-signal">● ONLINE</span>
         </div>
+        <div className="min-h-60 px-6 py-8 text-sm leading-loose whitespace-pre-wrap text-steel" aria-hidden="true">
+          {text.slice(0, length)}<span className="text-signal">▎</span>
+        </div>
+        <p className="sr-only">{text}</p>
+        <div className="border-t border-border px-6 py-3 text-xs tracking-wider text-gunmetal">CREATIVITY. PRECISION. PURPOSE.</div>
       </div>
-
-      {/* cursor blink keyframes (scoped) */}
-      <style>{`@keyframes blink { 50% { opacity: 0 } }`}</style>
     </div>
   );
 }

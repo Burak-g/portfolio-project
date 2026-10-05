@@ -1,61 +1,27 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faBomb } from '@fortawesome/free-solid-svg-icons';
+import { useState } from 'react';
+import { Menu, X } from 'lucide-react';
+
+const links = [
+  ['about', 'Om mig'], ['journey', 'Min rejse'], ['techStack', 'Tech stack'],
+  ['projects', 'Projekter'], ['contact', 'Kontakt'],
+];
 
 export default function Header() {
+  const [open, setOpen] = useState(false);
   return (
-    <header className="bg-gotham/90 sticky top-0 z-40 h-32 backdrop-saturate-150 supports-[backdrop-filter]:backdrop-blur-md">
-      <nav aria-label="Main navigation">
-        <div className="container-wide flex h-32 items-center justify-between py-4 md:flex-col md:justify-center">
-          {/* Logo */}
-          <a href="/" className="flex items-center">
-            <FontAwesomeIcon size="3x" icon={faBomb} />
-          </a>
-
-          {/* Mobile: hamburger */}
-          <button
-            data-collapse-toggle="navbar-search"
-            type="button"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-sm p-2 md:hidden"
-            aria-controls="navbar-search"
-            aria-expanded="false">
-            <span className="sr-only">Open main menu</span>
-            <FontAwesomeIcon icon={faBars} size="xl" />
-          </button>
-
-          {/* Desktop: links under the logo */}
-          <div id="navbar-search" className="hidden md:mt-3 md:flex">
-            <ul className="flex items-center justify-center gap-2 p-0 md:gap-4">
-              <li>
-                <a href="/" className="nav-link md:text-xl">
-                  Feed
-                </a>
-              </li>
-              <li>
-                <a href="/subs" className="nav-link md:text-xl">
-                  Subs
-                </a>
-              </li>
-              <li>
-                <a href="/" className="nav-link md:text-xl">
-                  Profile
-                </a>
-              </li>
-              <li>
-                <a href="/" className="nav-link md:text-xl">
-                  Profile
-                </a>
-              </li>
-              <li>
-                <a href="/" className="nav-link md:text-xl">
-                  Profile
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
+    <header className="sticky top-0 z-40 border-b border-border bg-gotham/95 backdrop-blur-md">
+      <nav aria-label="Hovednavigation" className="container-wide flex min-h-20 flex-wrap items-center justify-between">
+        <a href="#hero" aria-label="Burak Gültekin — til toppen" className="flex items-center gap-3 py-4">
+          <span className="border border-signal px-2 py-1 font-heading text-lg text-signal">BG</span>
+          <span className="font-mono text-xs tracking-widest text-steel">BURAK GÜLTEKIN</span>
+        </a>
+        <button type="button" className="p-3 text-signal md:hidden" aria-label={open ? 'Luk menu' : 'Åbn menu'} aria-expanded={open} aria-controls="main-menu" onClick={() => setOpen(!open)}>
+          {open ? <X size={22} /> : <Menu size={22} />}
+        </button>
+        <ul id="main-menu" className={`${open ? 'flex' : 'hidden'} w-full flex-col gap-1 pb-4 md:flex md:w-auto md:flex-row md:pb-0`}>
+          {links.map(([id, label]) => <li key={id}><a className="nav-link" href={`#${id}`} onClick={() => setOpen(false)}>{label}</a></li>)}
+        </ul>
       </nav>
-
-      <div className="pointer-events-none absolute bottom-0 left-0 h-px w-full bg-gradient-to-r from-transparent via-teal-400/50 to-transparent" />
     </header>
   );
 }

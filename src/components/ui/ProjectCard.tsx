@@ -18,7 +18,7 @@ export default function ProjectCard({ project }: Props) {
     <Card
       sx={{
         overflow: 'hidden',
-        borderRadius: 2,
+        borderRadius: 1,
         bgcolor: 'background.paper',
         boxShadow: 2,
       }}>
@@ -36,7 +36,7 @@ export default function ProjectCard({ project }: Props) {
       {/* Dark content panel like your screenshot */}
       <CardContent
         sx={{
-          bgcolor: 'grey.900',
+          bgcolor: 'background.paper',
           color: 'grey.100',
           py: 3,
         }}>
@@ -105,3 +105,4 @@ export default function ProjectCard({ project }: Props) {
     </Card>
   );
 }
+

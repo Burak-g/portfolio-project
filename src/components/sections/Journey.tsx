@@ -42,10 +42,10 @@ export default function Journey() {
     setValue(newValue);
   };
 
-  const indicatorColor = value === 0 ? '#14b8a6' : '#6366f1';
+  const indicatorColor = value === 0 ? '#e8bf4f' : '#91a8cb';
 
   // subtle selected background (module bg is #1e1e1e)
-  const selectedBg = value === 0 ? 'rgba(20, 184, 166, 0.08)' : 'rgba(99, 102, 241, 0.08)';
+  const selectedBg = value === 0 ? 'rgba(232, 191, 79, 0.08)' : 'rgba(145, 168, 203, 0.08)';
 
   return (
     <div className="container-wide">
@@ -57,9 +57,9 @@ export default function Journey() {
         <Box
           sx={{
             width: '100%',
-            background: '#1e1e1e',
+            background: '#151d2b',
             backgroundBlendMode: 'normal',
-            borderRadius: '8px',
+            borderRadius: '3px',
             overflow: 'hidden',
           }}>
           <Box sx={{ borderColor: 'divider' }}>
@@ -79,7 +79,7 @@ export default function Journey() {
 
                 '& .MuiTab-root': {
                   flex: 1,
-                  fontSize: '1.7rem',
+                  fontSize: { xs: '0.9rem', md: '1.2rem' },
                   fontWeight: 500,
                   textTransform: 'none',
                   minHeight: 64,
@@ -124,3 +124,4 @@ export default function Journey() {
     </div>
   );
 }
+

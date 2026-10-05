@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 
 interface ButtonProps {
   buttonText?: string;
-  type?: any;
+  type?: 'button' | 'submit' | 'reset';
   icon?: ReactNode;
   iconPosition?: 'left' | 'right';
   className?: string;
@@ -23,3 +23,4 @@ export default function Button({
     </button>
   );
 }
+

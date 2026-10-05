@@ -116,7 +116,7 @@ const PixelTransition: React.FC<PixelTransitionProps> = ({
   return (
     <div
       ref={containerRef}
-      className={` ${className} relative h-auto w-100 max-w-full overflow-hidden rounded-md border-2 border-teal-500 bg-[#222] text-white md:w-70 lg:w-80`}
+      className={` ${className} relative h-auto w-100 max-w-full overflow-hidden rounded-md border border-midnight bg-[#222] text-white md:w-70 lg:w-80`}
       style={style}
       onMouseEnter={!isTouchDevice ? handleMouseEnter : undefined}
       onMouseLeave={!isTouchDevice ? handleMouseLeave : undefined}
@@ -141,3 +141,4 @@ const PixelTransition: React.FC<PixelTransitionProps> = ({
 };
 
 export default PixelTransition;
+

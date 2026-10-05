@@ -3,26 +3,27 @@ import TerminalIntro from './TerminalIntro';
 export default function Hero() {
   return (
     <div className="container-wide">
-      <div className="flex flex-col gap-10 py-8 md:py-12 lg:flex-row lg:items-start">
+      <div className="flex flex-col gap-10 py-8 md:py-12 lg:flex-row lg:items-center">
         {/* Left: text (50%) */}
         <div className="min-w-0 lg:w-1/2">
           <div className="stack">
-            <h1>Burak Gültekin</h1>
+            <p className="hero-kicker">Softwareudvikling / Digital marketing</p><h1>Burak Gültekin<span className="text-signal">.</span></h1>
 
-            <p className="text-2xl leading-none font-semibold text-teal-500 md:text-3xl">
-              Datamatiker og <span className="whitespace-nowrap">digital marketing-konsulent</span>
+            <p className="text-2xl leading-snug font-semibold text-teal-500 md:text-3xl">
+              Softwareudvikler og <span className="">digital marketing-konsulent</span>
             </p>
 
-            <p className="font-semibold">
+            <p className="text-gunmetal">
               Hey, Burak her 👋🏻 Jeg studerer softwareudvikling, elsker digitale løsninger og brænder
               for kreative udfordringer. Samtidig hjælper jeg virksomheder med at styrke deres
               digitale tilstedeværelse som digital marketing-konsulent.
             </p>
 
-            <p className="font-semibold">
+            <p className="text-gunmetal">
               Velkommen til mit personlige site – tag et kig rundt, og lær mig (og mine projekter)
               lidt bedre at kende.
             </p>
+            <div className="flex flex-wrap gap-3 pt-2"><a href="#projects" className="btn btn-primary">Se mine projekter ↗</a><a href="#contact" className="btn btn-outline">Lad os tage en snak</a></div>
           </div>
         </div>
 
@@ -41,3 +42,4 @@ export default function Hero() {
     </div>
   );
 }
+
