@@ -1,5 +1,5 @@
 import portraitImg from '../../assets/images/AC5I8880C2.jpg';
-import pixelImg from '../../assets/images/ChatGPT Image Oct 2, 2025, 01_09_44 PM.png';
+import pixelImg from '../../assets/images/pixel-burak.png';
 import PixelTransition from '../ui/PixelTransition';
 
 export default function About() {
