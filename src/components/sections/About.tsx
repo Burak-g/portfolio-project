@@ -12,18 +12,31 @@ export default function About() {
             <h2>Om mig</h2>
 
             <p>
-              Mit navn er Burak, jeg er 27 år og i gang med at uddanne mig til datamatiker – med en
-              klar ambition om at blive full-stack udvikler. Jeg er drevet af nysgerrighed og en
-              lyst til at eksperimentere med nye teknologier og bygge løsninger, der gør en forskel
-              for mennesker.
+              Mit navn er Burak, jeg er 28 år og arbejder som frontendudvikler hos Region
+              Midtjylland. Jeg er uddannet datamatiker og har en klar ambition om at udvikle mig som
+              full-stack udvikler.
             </p>
 
             <p>
-              Jeg er på udkig efter en praktikplads, hvor jeg kan bringe mine færdigheder i spil og
-              blive en del af et team, der brænder for godt kodehåndværk og samarbejde. Jeg trives
-              allerbedst i fællesskaber med både faglighed og humor – hvor man spiller hinanden gode
-              og ikke glemmer at have det sjovt undervejs.
+              Jeg er nysgerrig af natur og elsker at forstå, hvordan ting hænger sammen – hvad enten
+              det handler om at knække et problem, lære en ny teknologi eller finde en bedre måde at
+              bygge en løsning på. For mig handler softwareudvikling ikke kun om at skrive kode, men
+              om at skabe noget, der giver mening for dem, der skal bruge det.
             </p>
+
+            <p>
+              Som person er jeg energisk, lyttende og engageret i det, jeg laver. Jeg sætter stor
+              pris på samarbejde, sparring og videndeling og trives bedst i et team, hvor vi spiller
+              hinanden gode, arbejder mod et fælles mål og samtidig har plads til humor undervejs.
+            </p>
+
+            <p>
+              Min vej ind i softwareudvikling har ikke været helt traditionel. Jeg har tidligere
+              arbejdet med digital marketing, og den erfaring tager jeg stadig med mig. Den har lært
+              mig at tænke i mennesker, brugeroplevelser og forretningsmæssige behov – perspektiver,
+              som jeg i dag kombinerer med det tekniske.
+            </p>
+
           </div>
         </div>
 
