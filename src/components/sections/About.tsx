@@ -1,5 +1,5 @@
 import portraitImg from '../../assets/images/AC5I8880C2.jpg';
-import pixelImg from '../../assets/images/pixel-burak.png';
+import pixelImg from '../../assets/images/pixel-burak2.png';
 import PixelTransition from '../ui/PixelTransition';
 
 export default function About() {
@@ -41,7 +41,7 @@ export default function About() {
 
         {/* Right: image / pixel transition */}
         <div className="flex min-w-0 justify-center md:w-1/2">
-          <figure className="relative w-full max-w-80 pt-16">
+          <figure className="relative w-full max-w-96 pt-16 lg:max-w-112">
             <figcaption className="text-signal pointer-events-none absolute top-0 left-0 flex w-full items-start justify-end gap-3">
               <span className="pt-1 font-mono text-xs tracking-wide">
                 <span className="portrait-hover-hint">Hold musen over mig</span>

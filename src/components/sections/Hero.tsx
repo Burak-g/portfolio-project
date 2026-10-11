@@ -7,16 +7,14 @@ export default function Hero() {
         {/* Left: text (50%) */}
         <div className="min-w-0 lg:w-1/2">
           <div className="stack">
-            <p className="hero-kicker">Softwareudvikling / Digital marketing</p><h1>Burak Gültekin<span className="text-signal">.</span></h1>
+            <h1>Burak Gültekin<span className="text-signal">.</span></h1>
 
-            <p className="text-2xl leading-snug font-semibold text-teal-500 md:text-3xl">
+            <p className="text-signal text-2xl leading-snug font-semibold text-teal-500 md:text-3xl">
               Softwareudvikler og <span className="">digital marketing-konsulent</span>
             </p>
 
             <p className="text-gunmetal">
-              Hey, Burak her 👋🏻 Jeg studerer softwareudvikling, elsker digitale løsninger og brænder
-              for kreative udfordringer. Samtidig hjælper jeg virksomheder med at styrke deres
-              digitale tilstedeværelse som digital marketing-konsulent.
+              Hey, Burak her 👋🏻 Jeg er frontendudvikler med en forkærlighed for kreative udfordringer, gode brugeroplevelser og digitale løsninger, der gør en forskel. Jeg elsker at omsætte idéer til noget, der både ser godt ud og fungerer i praksis.
             </p>
 
             <p className="text-gunmetal">
