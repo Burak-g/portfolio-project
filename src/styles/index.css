@@ -87,3 +87,15 @@
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
+
+@theme inline {
+  --color-danger-subtle-fg: var(--danger-subtle-fg);
+}
+
+:root {
+  --danger-subtle-fg: oklch(0.505 0.213 27.518);
+}
+
+.dark {
+  --danger-subtle-fg: oklch(0.704 0.191 22.216);
+}
