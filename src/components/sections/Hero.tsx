@@ -1,4 +1,10 @@
+import { Link } from '@/components/ui/link';
+import { buttonStyles } from '@/components/ui/Button';
+import { Heading } from '@/components/ui/heading';
+import { Text } from '@/components/ui/text';
 import TerminalIntro from './TerminalIntro';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 export default function Hero() {
   return (
@@ -7,21 +13,44 @@ export default function Hero() {
         {/* Left: text (50%) */}
         <div className="min-w-0 lg:w-1/2">
           <div className="stack">
-            <h1>Burak Gültekin<span className="text-signal">.</span></h1>
+            <Heading level={1} className="text-4xl md:text-6xl">
+              Burak Gültekin<span className="text-primary-subtle-fg">.</span>
+            </Heading>
 
-            <p className="text-signal text-2xl leading-snug font-semibold text-teal-500 md:text-3xl">
+            <Text className="text-fg text-2xl leading-snug font-semibold md:text-3xl">
               Softwareudvikler og <span className="">digital marketing-konsulent</span>
-            </p>
+            </Text>
 
-            <p className="text-gunmetal">
-              Hey, Burak her 👋🏻 Jeg er frontendudvikler med en forkærlighed for kreative udfordringer, gode brugeroplevelser og digitale løsninger, der gør en forskel. Jeg elsker at omsætte idéer til noget, der både ser godt ud og fungerer i praksis.
-            </p>
+            <Text className="text-muted-fg">
+              Hey, Burak her 👋🏻 Jeg er frontendudvikler med en forkærlighed for kreative
+              udfordringer, gode brugeroplevelser og digitale løsninger, der gør en forskel. Jeg
+              elsker at omsætte idéer til noget, der både ser godt ud og fungerer i praksis.
+            </Text>
 
-            <p className="text-gunmetal">
+            <Text className="text-muted-fg">
               Velkommen til mit personlige site – tag et kig rundt, og lær mig (og mine projekter)
               lidt bedre at kende.
-            </p>
-            <div className="flex flex-wrap gap-3 pt-2"><a href="#projects" className="btn btn-primary">Se mine projekter ↗</a><a href="#contact" className="btn btn-outline">Lad os tage en snak</a></div>
+            </Text>
+            <div className="flex flex-wrap gap-3 pt-2">
+              <Link
+                href="#projects"
+                className={buttonStyles({
+                  intent: 'primary',
+                  size: 'lg',
+                  className: 'project-cta',
+                })}>
+                Se mine projekter{' '}
+                <FontAwesomeIcon
+                  icon={faArrowRight}
+                  className="project-cta-arrow"
+                  transform={{ rotate: -45 }}
+                  aria-hidden="true"
+                />
+              </Link>
+              <Link href="#contact" className={buttonStyles({ intent: 'outline', size: 'lg' })}>
+                Lad os tage en snak
+              </Link>
+            </div>
           </div>
         </div>
 
@@ -40,4 +69,3 @@ export default function Hero() {
     </div>
   );
 }
-
