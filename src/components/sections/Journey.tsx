@@ -1,127 +1,47 @@
-import * as React from 'react';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
-import Box from '@mui/material/Box';
+'use client';
+import { Card, CardContent } from '@/components/ui/card';
+import { Heading } from '@/components/ui/heading';
+import { Text } from '@/components/ui/text';
+import { Tabs, TabList, Tab, TabPanel } from '@/components/ui/tabs';
 import TimelineList from './TimelineList';
 import { education, workExperience } from '@/lib/timelineData';
 
-interface TabPanelProps {
-  children?: React.ReactNode;
-  index: number;
-  value: number;
-  idPrefix: string;
-}
-
-function CustomTabPanel({ children, value, index, idPrefix, ...other }: TabPanelProps) {
-  return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`${idPrefix}-panel-${index}`}
-      aria-labelledby={`${idPrefix}-tab-${index}`}
-      {...other}>
-      {value === index && (
-        <Box sx={{ p: 3, fontSize: '1.125rem', lineHeight: 1.7 }}>{children}</Box>
-      )}
-    </div>
-  );
-}
-
-function a11yProps(idPrefix: string, index: number) {
-  return {
-    id: `${idPrefix}-tab-${index}`,
-    'aria-controls': `${idPrefix}-panel-${index}`,
-  };
-}
+const tabClassName =
+  'flex-1 justify-center rounded-none border-b-2 border-transparent px-3 py-4 text-sm transition-colors duration-200 first:ms-0 last:me-0 selected:border-primary focus-visible:outline-2 focus-visible:outline-ring focus-visible:-outline-offset-4 sm:text-base';
 
 export default function Journey() {
-  const [value, setValue] = React.useState(0);
-  const idPrefix = 'journey';
-
-  const handleChange = (_event: React.SyntheticEvent, newValue: number) => {
-    setValue(newValue);
-  };
-
-  const indicatorColor = value === 0 ? '#e8bf4f' : '#91a8cb';
-
-  // subtle selected background (module bg is #1e1e1e)
-  const selectedBg = value === 0 ? 'rgba(232, 191, 79, 0.08)' : 'rgba(145, 168, 203, 0.08)';
-
   return (
     <div className="container-wide">
       <header className="section-header stack-sm">
-        <h2 id="journey-heading">Min rejse</h2>
+        <Heading level={2} id="journey-heading" className="text-3xl md:text-5xl">
+          Min rejse
+        </Heading>
       </header>
-
       <div className="section-content">
-        <Box
-          sx={{
-            width: '100%',
-            background: '#151d2b',
-            backgroundBlendMode: 'normal',
-            borderRadius: '3px',
-            overflow: 'hidden',
-          }}>
-          <Box sx={{ borderColor: 'divider' }}>
-            <Tabs
-              value={value}
-              onChange={handleChange}
-              aria-labelledby="journey-heading"
-              variant="fullWidth"
-              sx={{
-                minHeight: 64,
-                px: 0,
-
-                '& .MuiTabs-flexContainer': {
-                  justifyContent: 'stretch',
-                  alignItems: 'stretch',
-                },
-
-                '& .MuiTab-root': {
-                  flex: 1,
-                  fontSize: { xs: '0.9rem', md: '1.2rem' },
-                  fontWeight: 500,
-                  textTransform: 'none',
-                  minHeight: 64,
-                  color: '#e0e0e0',
-                  px: 0,
-                  transition: 'background-color 200ms ease, color 200ms ease',
-
-                  '&.Mui-selected': {
-                    color: indicatorColor,
-                    backgroundColor: selectedBg,
-                  },
-
-                  '&:hover': {
-                    backgroundColor: 'rgba(255,255,255,0.04)',
-                  },
-                },
-
-                '& .MuiTab-root .MuiTab-wrapper, & .MuiTab-root .MuiTab-iconWrapper': {
-                  paddingInline: 32,
-                },
-
-                '& .MuiTabs-indicator': {
-                  backgroundColor: indicatorColor,
-                  height: '3px',
-                  left: 0,
-                },
-              }}>
-              <Tab label="Erhvervserfaring" {...a11yProps(idPrefix, 0)} />
-              <Tab label="Uddannelse" {...a11yProps(idPrefix, 1)} />
+        <Card className="rounded-md pt-0 pb-6">
+          <CardContent className="px-0">
+            <Tabs defaultSelectedKey="work" className="w-full gap-0">
+              <TabList
+                aria-labelledby="journey-heading"
+                selectionIndicator={false}
+                className="w-full gap-0 p-0">
+                <Tab id="work" className={tabClassName}>
+                  Erhvervserfaring
+                </Tab>
+                <Tab id="education" className={tabClassName}>
+                  Uddannelse
+                </Tab>
+              </TabList>
+              <TabPanel id="work" className="px-6 pt-6">
+                <TimelineList entries={workExperience} />
+              </TabPanel>
+              <TabPanel id="education" className="px-6 pt-6">
+                <TimelineList entries={education} />
+              </TabPanel>
             </Tabs>
-          </Box>
-
-          <CustomTabPanel value={value} index={0} idPrefix={idPrefix}>
-            <TimelineList entries={workExperience} />
-          </CustomTabPanel>
-
-          <CustomTabPanel value={value} index={1} idPrefix={idPrefix}>
-            <TimelineList entries={education} />
-          </CustomTabPanel>
-        </Box>
+          </CardContent>
+        </Card>
       </div>
     </div>
   );
 }
-
