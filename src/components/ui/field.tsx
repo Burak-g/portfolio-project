@@ -8,9 +8,9 @@ import {
   type LabelProps,
 } from 'react-aria-components/Label';
 import { Text, type TextProps } from 'react-aria-components/Text';
-import { cn } from 'cn';
+import { twMerge } from 'tailwind-merge';
 import { tv } from 'tailwind-variants';
-import { cx } from '@/components/ui/primitive.ts';
+import { cx } from '@/lib/primitive';
 
 export const labelStyles = tv({
   base: [
@@ -67,14 +67,14 @@ export function Description({ className, ...props }: TextProps) {
 export function Fieldset({ className, ...props }: React.ComponentProps<'fieldset'>) {
   return (
     <fieldset
-      className={cn('*:data-[slot=text]:mt-1 [&>*+[data-slot=control]]:mt-6', className)}
+      className={twMerge('*:data-[slot=text]:mt-1 [&>*+[data-slot=control]]:mt-6', className)}
       {...props}
     />
   );
 }
 
 export function FieldGroup({ className, ...props }: React.ComponentPropsWithoutRef<'div'>) {
-  return <div data-slot="control" className={cn('space-y-6', className)} {...props} />;
+  return <div data-slot="control" className={twMerge('space-y-6', className)} {...props} />;
 }
 
 export function FieldError({ className, ...props }: FieldErrorProps) {
@@ -86,7 +86,7 @@ export function Legend({ className, ...props }: React.ComponentProps<'legend'>) 
     <legend
       data-slot="legend"
       {...props}
-      className={cn('text-base/6 font-semibold data-disabled:opacity-50', className)}
+      className={twMerge('text-base/6 font-semibold data-disabled:opacity-50', className)}
     />
   );
 }
