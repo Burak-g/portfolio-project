@@ -1,7 +1,8 @@
-'use client';
-
-import { Card, CardContent, Typography, Box } from '@mui/material';
 import type { ReactNode } from 'react';
+import { Card, CardContent } from '@/components/ui/card';
+import { Heading } from '@/components/ui/heading';
+import { Text } from '@/components/ui/text';
+import { Link } from '@/components/ui/link';
 
 interface ContactCardProps {
   icon: ReactNode;
@@ -9,59 +10,26 @@ interface ContactCardProps {
   value: string;
   href?: string;
 }
-
 export default function ContactCard({ icon, title, value, href }: ContactCardProps) {
   return (
-    <Card
-      sx={{
-        height: '100%',
-        borderRadius: 1,
-        paddingX: 1,
-        border: '1px solid',
-        borderColor: 'divider',
-        backgroundColor: 'background.paper',
-        transition: 'all 0.2s ease',
-        '&:hover': {
-          transform: 'translateY(-4px)',
-          boxShadow: 6,
-        },
-      }}>
-      <CardContent
-        sx={{
-          height: '100%',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          gap: 2,
-          textAlign: 'center',
-        }}>
-        <Box sx={{ color: 'primary.main', fontSize: 48 }}>{icon}</Box>
-
-        <Typography variant="h6" fontWeight={600}>
-          {title}
-        </Typography>
-
+    <Card className="h-full rounded-sm">
+      <CardContent className="flex h-full flex-col items-center justify-center gap-4 text-center">
+        <div className="text-primary-subtle-fg text-4xl" aria-hidden="true">
+          {icon}
+        </div>
+        <Heading level={3}>{title}</Heading>
         {href ? (
-          <Typography
-            component="a"
+          <Link
             href={href}
-            target="_blank"
-            rel="noopener noreferrer"
-            sx={{
-              color: 'text.secondary',
-              textDecoration: 'underline', overflowWrap: 'anywhere',
-              '&:hover': {
-                color: 'primary.main',
-              },
-            }}>
+            target={href.startsWith('https:') ? '_blank' : undefined}
+            rel={href.startsWith('https:') ? 'noopener noreferrer' : undefined}
+            className="text-muted-fg hover:text-primary-subtle-fg break-all underline">
             {value}
-          </Typography>
+          </Link>
         ) : (
-          <Typography color="text.secondary">{value}</Typography>
+          <Text>{value}</Text>
         )}
       </CardContent>
     </Card>
   );
 }
-

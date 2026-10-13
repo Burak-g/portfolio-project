@@ -1,3 +1,5 @@
+import { Heading } from '@/components/ui/heading';
+import { Text } from '@/components/ui/text';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faSquareLinkedin } from '@fortawesome/free-brands-svg-icons';
@@ -8,14 +10,16 @@ export default function Contact() {
   return (
     <div className="container-wide">
       <header className="section-header stack">
-        <h2>Kontakt mig</h2>
+        <Heading level={2} className="text-3xl md:text-5xl">
+          Kontakt mig
+        </Heading>
 
         <div className="stack-sm">
-          <p className="font-bold">Lyder det som et match?</p>
-          <p className="text-muted max-w-3xl text-start">
+          <Text className="text-signal font-bold">Lyder det som et match?</Text>
+          <Text className="max-w-3xl text-start">
             Uanset om du har spørgsmål, idéer eller bare vil tage en snak – så ræk endelig ud. Jeg
             er altid åben for nye forbindelser og spændende muligheder.
-          </p>
+          </Text>
         </div>
       </header>
 
@@ -44,4 +48,3 @@ export default function Contact() {
     </div>
   );
 }
-
