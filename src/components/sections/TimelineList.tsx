@@ -1,80 +1,34 @@
-'use client';
-
-import Timeline from '@mui/lab/Timeline';
-import TimelineItem, { timelineItemClasses } from '@mui/lab/TimelineItem';
-import TimelineSeparator from '@mui/lab/TimelineSeparator';
-import TimelineConnector from '@mui/lab/TimelineConnector';
-import TimelineContent from '@mui/lab/TimelineContent';
-import TimelineDot from '@mui/lab/TimelineDot';
-import { styled } from '@mui/material/styles';
-
+import { twJoin } from 'tailwind-merge';
+import { Heading } from '@/components/ui/heading';
+import { Text } from '@/components/ui/text';
 import type { TimelineEntry } from '@/lib/timelineData';
 
-const ACCENT_BY_TYPE: Record<TimelineEntry['type'], string> = {
-  work: '#e8bf4f',
-  education: '#91a8cb',
-};
-
-const CustomTimelineDot = styled(TimelineDot)<{ $accent: string }>(({ $accent }) => ({
-  borderColor: $accent,
-  color: $accent,
-}));
-
-const CustomTimelineConnector = styled(TimelineConnector)<{ $accent: string }>(({ $accent }) => ({
-  backgroundColor: $accent,
-  width: 2,
-  flexGrow: 1,
-}));
-
-type TimelineListProps = {
-  entries: TimelineEntry[];
-};
-
-export default function TimelineList({ entries }: TimelineListProps) {
+export default function TimelineList({ entries }: { entries: TimelineEntry[] }) {
   return (
-    <Timeline
-      position="right"
-      sx={{
-        p: 0,
-        m: 0,
-        [`& .${timelineItemClasses.root}:before`]: {
-          flex: 0,
-          padding: 0,
-        },
-        '& .MuiTimelineItem-root': {
-          alignItems: 'stretch',
-        },
-        '& .MuiTimelineSeparator-root': {
-          alignItems: 'center',
-        },
-      }}>
-      {entries.map((entry, index) => {
-        const accent = ACCENT_BY_TYPE[entry.type];
-        const showConnector = index !== entries.length - 1;
-
-        return (
-          <TimelineItem
-            key={entry.id}
-            sx={{
-              '& .MuiTimelineContent-root': {
-                pb: showConnector ? 8 : 0,
-              },
-            }}>
-            <TimelineSeparator>
-              <CustomTimelineDot variant="outlined" $accent={accent} />
-              {showConnector ? <CustomTimelineConnector $accent={accent} /> : null}
-            </TimelineSeparator>
-
-            <TimelineContent>
-              <h3 className="m-0">{entry.title}</h3>
-              <p style={{ color: accent }}>{entry.company}</p>
-              <p className="text-gunmetal">{entry.period}</p>
-              <p className="mt-2">{entry.description}</p>
-            </TimelineContent>
-          </TimelineItem>
-        );
-      })}
-    </Timeline>
+    <ol>
+      {entries.map((entry, index) => (
+        <li key={entry.id} className="grid min-w-0 md:grid-cols-[12rem_minmax(0,1fr)] md:gap-x-6">
+          <Text className="hidden pt-1 font-mono text-xs leading-relaxed md:block">
+            {entry.period}
+          </Text>
+          <div
+            className={twJoin(
+              'border-border relative min-w-0 border-l pl-6 sm:pl-8',
+              index < entries.length - 1 && 'pb-10',
+            )}>
+            <span
+              aria-hidden="true"
+              className="bg-primary ring-card absolute top-1.5 -left-1.5 size-3 rounded-full ring-4"
+            />
+            <Text className="mb-2 font-mono text-xs leading-relaxed md:hidden">{entry.period}</Text>
+            <Heading level={3} className="font-sans text-lg leading-snug font-semibold sm:text-xl">
+              {entry.title}
+            </Heading>
+            <Text className="text-primary-subtle-fg mt-1">{entry.company}</Text>
+            <Text className="mt-3 max-w-[65ch] text-base leading-7">{entry.description}</Text>
+          </div>
+        </li>
+      ))}
+    </ol>
   );
 }
-
