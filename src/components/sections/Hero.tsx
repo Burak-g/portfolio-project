@@ -3,12 +3,14 @@ import { buttonStyles } from '@/components/ui/Button';
 import { Heading } from '@/components/ui/heading';
 import { Text } from '@/components/ui/text';
 import TerminalIntro from './TerminalIntro';
+import HeroDotGrid from './HeroDotGrid';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCommentDots } from '@fortawesome/free-solid-svg-icons';
 
 export default function Hero() {
   return (
     <>
+      <HeroDotGrid />
       <div className="container-wide relative z-10">
         <div className="flex flex-col gap-10 py-8 md:py-12 lg:flex-row lg:items-center">
           {/* Left: text (50%) */}

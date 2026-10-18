@@ -129,6 +129,13 @@
     min-height: calc(100svh - 5rem);
     background: var(--bg);
   }
+  .hero-dot-grid {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.8;
+    mask-image: radial-gradient(ellipse at 65% 45%, black 15%, transparent 80%);
+  }
   .nav-link {
     position: relative;
     display: block;
