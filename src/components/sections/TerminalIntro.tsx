@@ -171,7 +171,9 @@ export default function TerminalIntro({
             </span>
           )}
           {entries.map((entry, index) => (
-            <div key={index} className="mb-4">
+            <div
+              key={index}
+              className="motion-safe:animate-in motion-safe:fade-in mb-4 motion-safe:duration-150">
               <div className="text-primary-subtle-fg">burak@portfolio:~$ {entry.command}</div>
               <div>{entry.output}</div>
             </div>

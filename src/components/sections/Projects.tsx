@@ -40,7 +40,9 @@ export default function Projects() {
           </Button>
         </div>
       </header>
-      <div className="section-content grid gap-6 md:grid-cols-2">
+      <div
+        key={current}
+        className="section-content motion-safe:animate-in motion-safe:fade-in grid gap-6 motion-safe:duration-[250ms] md:grid-cols-2">
         {projects.slice(current * PAGE_SIZE, (current + 1) * PAGE_SIZE).map((project) => (
           <ProjectCard key={project.id} project={project} />
         ))}

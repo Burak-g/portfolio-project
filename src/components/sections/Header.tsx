@@ -17,7 +17,7 @@ const links = [
 export default function Header() {
   const [open, setOpen] = useState(false);
   return (
-    <header className="border-border bg-navbar text-navbar-fg sticky top-0 z-40 border-b supports-[backdrop-filter]:bg-navbar/75 supports-[backdrop-filter]:backdrop-blur-xl">
+    <header className="border-border bg-navbar text-navbar-fg supports-[backdrop-filter]:bg-navbar/75 sticky top-0 z-40 border-b supports-[backdrop-filter]:backdrop-blur-xl">
       <nav
         aria-label="Hovednavigation"
         className="container-wide flex min-h-20 flex-wrap items-center justify-between md:grid md:grid-cols-[1fr_auto_1fr]">
@@ -45,7 +45,7 @@ export default function Header() {
         </div>
         <ul
           id="main-menu"
-          className={`${open ? 'flex' : 'hidden'} w-full flex-col gap-1 pb-4 md:flex md:w-auto md:flex-row md:pb-0`}>
+          className={`${open ? 'motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-top-1 flex motion-safe:duration-200' : 'hidden'} w-full flex-col gap-1 pb-4 md:flex md:w-auto md:animate-none md:flex-row md:pb-0`}>
           {links.map(([id, label]) => (
             <li key={id}>
               <Link

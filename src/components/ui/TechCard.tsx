@@ -21,7 +21,8 @@ export default function TechCard({ category }: { category: TechCategory }) {
                 className={buttonStyles({
                   intent: 'plain',
                   size: 'sq-lg',
-                  className: 'size-14 sm:size-14 *:[svg]:size-10 sm:*:[svg]:size-10',
+                  className:
+                    'size-14 motion-safe:transition-transform motion-safe:duration-200 motion-safe:hover:scale-105 motion-safe:focus-visible:scale-105 sm:size-14 *:[svg]:size-10 sm:*:[svg]:size-10',
                 })}>
                 <Icon
                   className="size-10 opacity-80 transition-opacity hover:opacity-100"

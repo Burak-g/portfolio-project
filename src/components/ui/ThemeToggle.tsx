@@ -29,7 +29,19 @@ export default function ThemeToggle() {
       onPress={toggleTheme}
       aria-label="Mørkt tema"
       aria-pressed={dark}>
-      {dark ? <Sun aria-hidden="true" /> : <Moon aria-hidden="true" />}
+      {dark ? (
+        <Sun
+          key="sun"
+          aria-hidden="true"
+          className="motion-safe:animate-in motion-safe:fade-in motion-safe:zoom-in-75 motion-safe:duration-200"
+        />
+      ) : (
+        <Moon
+          key="moon"
+          aria-hidden="true"
+          className="motion-safe:animate-in motion-safe:fade-in motion-safe:zoom-in-75 motion-safe:duration-200"
+        />
+      )}
     </Button>
   );
 }

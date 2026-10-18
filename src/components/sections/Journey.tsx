@@ -1,7 +1,6 @@
 'use client';
 import { Card, CardContent } from '@/components/ui/card';
 import { Heading } from '@/components/ui/heading';
-import { Text } from '@/components/ui/text';
 import { Tabs, TabList, Tab, TabPanel } from '@/components/ui/tabs';
 import TimelineList from './TimelineList';
 import { education, workExperience } from '@/lib/timelineData';
@@ -32,10 +31,14 @@ export default function Journey() {
                   Uddannelse
                 </Tab>
               </TabList>
-              <TabPanel id="work" className="px-6 pt-6">
+              <TabPanel
+                id="work"
+                className="motion-safe:animate-in motion-safe:fade-in px-6 pt-6 motion-safe:duration-200">
                 <TimelineList entries={workExperience} />
               </TabPanel>
-              <TabPanel id="education" className="px-6 pt-6">
+              <TabPanel
+                id="education"
+                className="motion-safe:animate-in motion-safe:fade-in px-6 pt-6 motion-safe:duration-200">
                 <TimelineList entries={education} />
               </TabPanel>
             </Tabs>
