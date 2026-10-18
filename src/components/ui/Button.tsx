@@ -9,7 +9,7 @@ import { cx } from '@/lib/primitive';
 
 export const buttonStyles = tv({
   base: [
-    '[--btn-border:var(--color-fg)]/15 [--btn-icon-active:var(--btn-fg)] [--btn-outline:var(--color-ring)] [--btn-radius:var(--radius-md)] [--btn-ring:var(--color-ring)]/20',
+    '[--btn-border:var(--color-fg)]/15 [--btn-icon-active:var(--btn-fg)] [--btn-outline:var(--color-ring)] [--btn-radius:var(--radius-sm)] [--btn-ring:var(--color-ring)]/20',
     'bg-(--btn-bg) text-(--btn-fg) outline-(--btn-outline) ring-(--btn-ring) hover:bg-(--btn-overlay)',
     'relative isolate inline-flex items-center justify-center border border-(--btn-border) font-medium transition-colors duration-200 hover:no-underline',
     'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:ring-2 focus-visible:ring-offset-3 focus-visible:ring-offset-bg',
@@ -80,7 +80,7 @@ export const buttonStyles = tv({
 
     isCircle: {
       true: 'rounded-full',
-      false: 'rounded-md',
+      false: 'rounded-sm',
     },
   },
   defaultVariants: {

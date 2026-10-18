@@ -18,7 +18,7 @@ export default function Journey() {
         </Heading>
       </header>
       <div className="section-content">
-        <Card className="rounded-md pt-0 pb-6">
+        <Card className="rounded-sm pt-0 pb-6">
           <CardContent className="px-0">
             <Tabs defaultSelectedKey="work" className="w-full gap-0">
               <TabList

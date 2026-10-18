@@ -123,9 +123,11 @@
     background: var(--secondary);
   }
   .hero-section {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
     min-height: calc(100svh - 5rem);
-    background:
-      radial-gradient(ellipse at 85% 30%, var(--accent-subtle) 0%, transparent 55%), var(--bg);
+    background: var(--bg);
   }
   .nav-link {
     position: relative;
@@ -156,35 +158,6 @@
   .nav-link[data-focus-visible]::after {
     transform: scaleX(1);
   }
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.8rem 1.4rem;
-    font-size: 0.9rem;
-    font-weight: 700;
-    border-radius: var(--radius-sm);
-    transition:
-      background 180ms,
-      color 180ms;
-  }
-  .btn-primary {
-    background: var(--primary);
-    color: var(--primary-fg);
-  }
-  .btn-primary:hover {
-    background: var(--primary);
-  }
-  .btn-outline {
-    border: 1px solid var(--primary);
-    color: var(--primary);
-  }
-  .btn-outline:hover,
-  .btn-outline:focus-visible,
-  .btn-outline:active {
-    background: var(--primary);
-    color: var(--primary-fg);
-  }
   .project-cta-arrow {
     transition: transform 200ms ease;
   }
@@ -202,7 +175,9 @@
     border: 1px solid var(--border);
     border-top: 3px solid var(--primary);
     background: var(--card);
-    box-shadow: 12px 12px 0 var(--secondary);
+  }
+  .custom-pixel-card {
+    box-shadow: 12px 12px 0 var(--card);
   }
   .custom-pixel-card img {
     width: 100%;

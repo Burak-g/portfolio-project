@@ -37,10 +37,10 @@ export const projects: Project[] = [
     id: 'portfolio',
     title: 'Portfolio (React)',
     description:
-      'Mit personlige portfolio-site bygget med React, Tailwind og MUI. Fokus på component-driven struktur, theming (light/dark), og genanvendelige UI-komponenter med datafiler til tech stack og projekter.',
+      'Mit personlige portfolio-site bygget med React, TypeScript, Tailwind CSS og Intent UI. Fokus på genanvendelige komponenter, lyst og mørkt tema samt en interaktiv terminal.',
     imageSrc: gotorzImg,
     imageAlt: 'Screenshot of Portfolio project',
-    tech: ['React', 'TypeScript', 'Tailwind CSS', 'Material UI', 'Vite'],
+    tech: ['React', 'TypeScript', 'Tailwind CSS', 'Intent UI', 'Vite'],
     href: '#',
     githubHref: '#',
   },

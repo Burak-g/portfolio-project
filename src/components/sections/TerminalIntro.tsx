@@ -1,3 +1,10 @@
+'use client';
+import { TextField } from '@/components/ui/text-field';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/field';
+import { Code } from '@/components/ui/text';
+
+import { Button } from '@/components/ui/Button';
 import { useEffect, useMemo, useRef, useState, type FormEvent, type KeyboardEvent } from 'react';
 import { projects } from '../../lib/projectData';
 import { techCategories } from '../../lib/techStackData';
@@ -5,9 +12,9 @@ import { runTerminalCommand, terminalCommandNames } from '../../lib/terminalComm
 
 const defaultLines = [
   '> Initializing Burak...\n',
-  '> Loading development toolkit...\n',
-  '> Portfolio systems online.\n',
-  '> Skriv help for at udforske portfolioen.\n',
+  '> Turning caffeine into components...\n',
+  '> Portfolio systems online.\n\n',
+  '> Skriv help for at udforske portfolio.\n',
 ];
 const context = {
   projects: projects.map((project) => `${project.title} — ${project.tech.join(', ')}`),
@@ -25,6 +32,20 @@ type TerminalIntroProps = {
   className?: string;
 };
 type Entry = { command: string; output: string };
+
+function HighlightHelp({ text }: { text: string }) {
+  return text.split(/(\bhelp\b)/).map((part, index) =>
+    part === 'help' ? (
+      <Code
+        key={index}
+        className="bg-primary text-primary-fg border-0 px-1 text-[length:inherit] font-normal sm:text-[length:inherit]">
+        {part}
+      </Code>
+    ) : (
+      part
+    ),
+  );
+}
 
 export default function TerminalIntro({
   lines = defaultLines,
@@ -121,29 +142,37 @@ export default function TerminalIntro({
   return (
     <div className={`${hidden ? 'invisible' : ''} ${className}`}>
       <div className="terminal-panel font-mono">
-        <div className="border-border text-gunmetal flex items-center justify-between border-b px-4 py-4 text-xs sm:px-6">
+        <div className="border-border text-muted-fg flex items-center justify-between border-b px-4 py-4 text-xs sm:px-6">
           <span>BURAK / SYSTEM CONSOLE</span>
-          <span className="text-signal">● ONLINE</span>
+          <span className="text-primary-subtle-fg inline-flex items-center gap-2">
+            <span
+              aria-hidden="true"
+              className="size-2 rounded-full bg-current motion-safe:animate-[pulse_3s_ease-in-out_infinite]"
+            />
+            ONLINE
+          </span>
         </div>
         <div
           ref={outputRef}
-          className="text-steel h-72 overflow-y-auto px-4 py-5 text-sm leading-relaxed break-words whitespace-pre-wrap sm:px-6"
+          className="text-fg h-72 overflow-y-auto px-4 py-5 text-sm leading-relaxed break-words whitespace-pre-wrap sm:px-6"
           tabIndex={0}
           aria-label="Terminalens historik">
           {showIntro && (
             <>
-              <span aria-hidden="true">{text.slice(0, length)}</span>
+              <span aria-hidden="true">
+                <HighlightHelp text={text.slice(0, length)} />
+              </span>
               <span className="sr-only">{text}</span>
             </>
           )}
           {!showIntro && entries.length === 0 && (
-            <span className="text-gunmetal">
-              Terminalen er ryddet. Skriv help for at komme i gang.
+            <span className="text-muted-fg">
+              <HighlightHelp text="Terminalen er ryddet. Skriv help for at komme i gang." />
             </span>
           )}
           {entries.map((entry, index) => (
             <div key={index} className="mb-4">
-              <div className="text-signal">burak@portfolio:~$ {entry.command}</div>
+              <div className="text-primary-subtle-fg">burak@portfolio:~$ {entry.command}</div>
               <div>{entry.output}</div>
             </div>
           ))}
@@ -154,38 +183,46 @@ export default function TerminalIntro({
         <form
           onSubmit={submit}
           className="border-border flex items-center gap-2 border-t px-4 py-3 sm:px-6">
-          <label htmlFor="portfolio-command" className="text-signal shrink-0 text-sm">
+          <Label htmlFor="portfolio-command" className="text-primary-subtle-fg shrink-0 text-sm">
             <span aria-hidden="true">~$</span>
             <span className="sr-only">Terminalkommando</span>
-          </label>
-          <input
-            id="portfolio-command"
-            type="text"
+          </Label>
+          <TextField
+            aria-label="Terminalkommando"
+            className="min-w-0 flex-1"
             value={input}
-            onChange={(event) => {
-              setInput(event.target.value);
+            onChange={(value) => {
+              setInput(value);
               setHistoryIndex(null);
-            }}
-            onKeyDown={handleKeyDown}
-            maxLength={200}
-            autoComplete="off"
-            autoCapitalize="none"
-            spellCheck={false}
-            placeholder="Skriv help…"
-            aria-describedby="terminal-help"
-            className="text-steel placeholder:text-gunmetal focus-visible:outline-signal min-w-0 flex-1 rounded-sm border-0 bg-transparent px-1 py-1 font-mono text-sm focus-visible:outline-2 focus-visible:outline-offset-2"
-          />
-          <button
+            }}>
+            <Input
+              id="portfolio-command"
+              type="text"
+              onKeyDown={handleKeyDown}
+              maxLength={200}
+              autoComplete="off"
+              autoCapitalize="none"
+              spellCheck={false}
+              placeholder="Skriv help…"
+              aria-describedby="terminal-help"
+              className="text-fg placeholder:text-muted-fg focus-visible:outline-ring min-w-0 flex-1 rounded-sm border-0 bg-transparent px-1 py-1 font-mono text-sm focus-visible:outline-2 focus-visible:outline-offset-2"
+            />
+          </TextField>
+          <Button
+            intent="outline"
+            size="sm"
             type="submit"
-            className="border-border text-gunmetal hover:border-signal hover:text-signal rounded-sm border px-2 py-1 text-xs transition-colors"
+            className="min-w-11 shrink-0"
             aria-label="Kør kommando">
-            ↵
-          </button>
+            <span aria-hidden="true" className="text-xl leading-none">
+              ↵
+            </span>
+          </Button>
         </form>
         <div
           id="terminal-help"
-          className="border-border text-gunmetal border-t px-4 py-3 text-xs sm:px-6">
-          help · ↑ / ↓ historik · Tab fuldfør · Enter kør
+          className="border-border text-muted-fg border-t px-4 py-3 text-xs sm:px-6">
+          <HighlightHelp text="help · ↑ / ↓ historik · Tab fuldfør · Enter kør" />
         </div>
       </div>
     </div>

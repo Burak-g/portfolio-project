@@ -17,20 +17,19 @@ const links = [
 export default function Header() {
   const [open, setOpen] = useState(false);
   return (
-    <header className="border-border bg-navbar text-navbar-fg sticky top-0 z-40 border-b backdrop-blur-md">
+    <header className="border-border bg-navbar text-navbar-fg sticky top-0 z-40 border-b supports-[backdrop-filter]:bg-navbar/75 supports-[backdrop-filter]:backdrop-blur-xl">
       <nav
         aria-label="Hovednavigation"
-        className="container-wide flex min-h-20 flex-wrap items-center justify-between">
+        className="container-wide flex min-h-20 flex-wrap items-center justify-between md:grid md:grid-cols-[1fr_auto_1fr]">
         <Link
           href="#hero"
           aria-label="Burak Gültekin — til toppen"
-          className="flex items-center gap-3 py-4">
+          className="flex items-center gap-3 py-4 md:justify-self-start">
           <span className="border-primary font-display text-primary-subtle-fg border-2 px-2 py-1 text-lg">
             BG
           </span>
-          <span className="text-fg font-mono text-xs tracking-widest">BURAK GÜLTEKIN</span>
         </Link>
-        <div className="flex items-center gap-2 md:order-last">
+        <div className="flex items-center gap-2 md:order-last md:justify-self-end">
           <ThemeToggle />
           <Button
             intent="plain"
@@ -49,7 +48,10 @@ export default function Header() {
           className={`${open ? 'flex' : 'hidden'} w-full flex-col gap-1 pb-4 md:flex md:w-auto md:flex-row md:pb-0`}>
           {links.map(([id, label]) => (
             <li key={id}>
-              <Link className="nav-link" href={`#${id}`} onPress={() => setOpen(false)}>
+              <Link
+                className="nav-link font-display"
+                href={`#${id}`}
+                onPress={() => setOpen(false)}>
                 {label}
               </Link>
             </li>

@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { Moon, Sun } from 'lucide-react';
-import { IntentUiButton as Button } from '@/components/ui/IntentUiButton';
+import { Button } from '@/components/ui/Button';
 
 export default function ThemeToggle() {
   const [dark, setDark] = useState(() => document.documentElement.classList.contains('dark'));
@@ -25,6 +25,7 @@ export default function ThemeToggle() {
     <Button
       intent="outline"
       size="sq-md"
+      className="border-2"
       onPress={toggleTheme}
       aria-label="Mørkt tema"
       aria-pressed={dark}>

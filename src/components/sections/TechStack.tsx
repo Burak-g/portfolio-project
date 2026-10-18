@@ -1,3 +1,5 @@
+import { Heading } from '@/components/ui/heading';
+
 import TechCard from '../ui/TechCard';
 import { techCategories } from '../../lib/techStackData';
 
@@ -5,7 +7,9 @@ export default function TechStack() {
   return (
     <div className="container-wide">
       <header className="section-header stack-sm">
-        <h2 id="techstack-heading">Tech stack</h2>
+        <Heading level={2} className="text-3xl md:text-5xl" id="techstack-heading">
+          Tech stack
+        </Heading>
       </header>
 
       <div className="section-content">

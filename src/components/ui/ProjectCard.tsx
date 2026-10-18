@@ -1,108 +1,58 @@
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
-import Stack from '@mui/material/Stack';
-import Chip from '@mui/material/Chip';
-import Button from '@mui/material/Button';
+import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
+import { Heading } from '@/components/ui/heading';
+import { Text } from '@/components/ui/text';
+import { Link } from '@/components/ui/link';
+import { Badge } from '@/components/ui/badge';
+import { buttonStyles } from '@/components/ui/Button';
+import type { Project } from '@/lib/projectData';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
-import type { Project } from '../../lib/projectData';
-
-type Props = {
-  project: Project;
-};
-
-export default function ProjectCard({ project }: Props) {
+export default function ProjectCard({ project }: { project: Project }) {
   return (
-    <Card
-      sx={{
-        overflow: 'hidden',
-        borderRadius: 1,
-        bgcolor: 'background.paper',
-        boxShadow: 2,
-      }}>
-      {/* Top image */}
-      <CardMedia
-        component="img"
-        image={project.imageSrc}
+    <Card className="h-full gap-5 overflow-hidden rounded-sm pt-0">
+      <img
+        src={project.imageSrc}
         alt={project.imageAlt}
-        sx={{
-          height: { xs: 180, sm: 220 },
-          objectFit: 'cover',
-        }}
+        className="h-48 w-full object-cover sm:h-56"
       />
-
-      {/* Dark content panel like your screenshot */}
-      <CardContent
-        sx={{
-          bgcolor: 'background.paper',
-          color: 'grey.100',
-          py: 3,
-        }}>
-        <Typography
-          variant="h5"
-          component="h3"
-          sx={{ fontWeight: 700, textAlign: 'center', mb: 2 }}>
+      <CardHeader>
+        <Heading level={3} className="text-xl">
           {project.title}
-        </Typography>
-
-        {/* Tech chips row */}
-        <Stack
-          direction="row"
-          useFlexGap
-          flexWrap="wrap"
-          justifyContent="center"
-          spacing={1}
-          sx={{ mb: 2 }}>
-          {project.tech.map((t) => (
-            <Chip
-              key={t}
-              label={t}
-              variant="outlined"
-              size="small"
-              sx={{
-                borderColor: 'primary.main',
-                color: 'primary.main',
-                '& .MuiChip-label': { fontWeight: 500 },
-              }}
-            />
+        </Heading>
+        <div className="mt-3 flex flex-wrap gap-2">
+          {project.tech.map((tech) => (
+            <Badge
+              key={tech}
+              intent="outline"
+              isCircle={false}
+              className="[--badge-border:var(--color-border)] [--badge-fg:var(--color-muted-fg)]">
+              {tech}
+            </Badge>
           ))}
-        </Stack>
-
-        <Typography
-          variant="body2"
-          sx={{
-            color: 'grey.200',
-            lineHeight: 1.7,
-            mb: 3,
-          }}>
-          {project.description}
-        </Typography>
-
-        <Box sx={{ display: 'flex', justifyContent: 'center', gap: 1.5 }}>
-          {project.href ? (
-            <Button
-              variant="outlined"
-              color="primary"
-              href={project.href}
-              sx={{ textTransform: 'none', px: 2.5 }}>
-              Læs mere om projektet
-            </Button>
-          ) : null}
-
-          {project.githubHref ? (
-            <Button
-              variant="text"
-              color="inherit"
-              href={project.githubHref}
-              sx={{ textTransform: 'none', color: 'grey.200' }}>
-              GitHub
-            </Button>
-          ) : null}
-        </Box>
+        </div>
+      </CardHeader>
+      <CardContent className="flex-1">
+        <Text className="text-base leading-relaxed">{project.description}</Text>
       </CardContent>
+      {(project.href || project.githubHref) && (
+        <CardFooter className="flex flex-wrap gap-3">
+          {project.href && (
+            <Link href={project.href} className={buttonStyles({ intent: 'outline' })}>
+              Læs mere om projektet
+            </Link>
+          )}
+          {project.githubHref && (
+            <Link
+              href={project.githubHref}
+              aria-label={`Se ${project.title} på GitHub`}
+              className="text-muted-fg hover:text-primary-subtle-fg inline-flex min-h-11 items-center gap-2 rounded-sm px-3 text-sm transition-colors duration-200 hover:underline">
+              <FontAwesomeIcon icon={faGithub} aria-hidden="true" className="size-4" />
+              GitHub
+            </Link>
+          )}
+        </CardFooter>
+      )}
     </Card>
   );
 }
-

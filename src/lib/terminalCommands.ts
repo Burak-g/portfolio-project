@@ -5,6 +5,7 @@ export const terminalCommandNames = [
   'skills',
   'journey',
   'contact',
+  'wisdom',
   'clear',
 ] as const;
 
@@ -18,7 +19,7 @@ export function runTerminalCommand(input: string, context: Context): Result {
     case 'help':
       return {
         output:
-          'Tilgængelige kommandoer:\n  about     Om Burak\n  projects  Se projekter\n  skills    Se teknologier\n  journey   Erfaring og uddannelse\n  contact   Kontaktoplysninger\n  clear     Ryd terminalen\n\n↑ / ↓: kommandohistorik · Tab: fuldfør kommando',
+          'Tilgængelige kommandoer:\n  about     Om Burak\n  projects  Se projekter\n  skills    Se teknologier\n  journey   Erfaring og uddannelse\n  contact   Kontaktoplysninger\n  wisdom    Et tilfældigt motiverende citat\n  clear     Ryd terminalen\n\n↑ / ↓: kommandohistorik · Tab: fuldfør kommando',
       };
     case 'about':
       return {
@@ -38,6 +39,10 @@ export function runTerminalCommand(input: string, context: Context): Result {
           'E-mail: burak-1998@live.dk\nTelefon: +45 50 66 72 53\nLinkedIn: linkedin.com/in/burak-gultekin\n\nÅbner kontakt…',
         section: 'contact',
       };
+    case 'wisdom': {
+      const wisdom = getRandomWisdom();
+      return { output: `“${wisdom}”` };
+    }
     case 'clear':
       return { output: '', clear: true };
     case '':
@@ -46,3 +51,4 @@ export function runTerminalCommand(input: string, context: Context): Result {
       return { output: `Ukendt kommando: ${input.trim()}\nSkriv help for at se mulighederne.` };
   }
 }
+import { getRandomWisdom } from './wisdomQuotes';

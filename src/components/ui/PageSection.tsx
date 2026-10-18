@@ -9,7 +9,9 @@ type PageSectionProps = {
 
 export function PageSection({ id, children, className = '' }: PageSectionProps) {
   return (
-    <section id={id} className={`portfolio-section ${id === 'hero' ? 'hero-section flex items-center' : ''} ${className}`}>
+    <section
+      id={id}
+      className={`portfolio-section ${id === 'hero' ? 'hero-section flex items-center' : ''} ${className}`}>
       {children}
     </section>
   );

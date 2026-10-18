@@ -15,7 +15,6 @@ export default function Contact() {
         </Heading>
 
         <div className="stack-sm">
-          <Text className="text-signal font-bold">Lyder det som et match?</Text>
           <Text className="max-w-3xl text-start">
             Uanset om du har spørgsmål, idéer eller bare vil tage en snak – så ræk endelig ud. Jeg
             er altid åben for nye forbindelser og spændende muligheder.
