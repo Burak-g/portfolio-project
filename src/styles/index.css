@@ -158,12 +158,6 @@
   .nav-link[data-focus-visible]::after {
     transform: scaleX(1);
   }
-  .project-cta-arrow {
-    transition: transform 200ms ease;
-  }
-  .project-cta:is(:hover, :focus-visible, [data-hovered], [data-focus-visible]) .project-cta-arrow {
-    transform: translateX(3px);
-  }
   .hero-kicker {
     font-family: var(--font-mono);
     font-size: 0.7rem;
@@ -199,9 +193,6 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .project-cta .project-cta-arrow {
-    transform: none;
-  }
   html {
     scroll-behavior: auto;
   }

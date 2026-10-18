@@ -4,7 +4,7 @@ import { Heading } from '@/components/ui/heading';
 import { Text } from '@/components/ui/text';
 import TerminalIntro from './TerminalIntro';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { faCommentDots } from '@fortawesome/free-solid-svg-icons';
 
 export default function Hero() {
   return (
@@ -34,6 +34,7 @@ export default function Hero() {
               </Text>
               <div className="flex flex-wrap gap-3 pt-2">
                 <Link href="#contact" className={buttonStyles({ intent: 'primary', size: 'lg' })}>
+                  <FontAwesomeIcon icon={faCommentDots} aria-hidden="true" />
                   Lad os tage en snak
                 </Link>
                 <Link
@@ -41,15 +42,8 @@ export default function Hero() {
                   className={buttonStyles({
                     intent: 'outline',
                     size: 'lg',
-                    className: 'project-cta',
                   })}>
-                  Se mine projekter{' '}
-                  <FontAwesomeIcon
-                    icon={faArrowRight}
-                    className="project-cta-arrow"
-                    transform={{ rotate: -45 }}
-                    aria-hidden="true"
-                  />
+                  Se mine projekter
                 </Link>
               </div>
             </div>
