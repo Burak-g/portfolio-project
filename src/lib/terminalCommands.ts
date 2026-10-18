@@ -19,7 +19,7 @@ export function runTerminalCommand(input: string, context: Context): Result {
     case 'help':
       return {
         output:
-          'Tilgængelige kommandoer:\n  about     Om Burak\n  projects  Se projekter\n  skills    Se teknologier\n  journey   Erfaring og uddannelse\n  contact   Kontaktoplysninger\n  wisdom    Et tilfældigt motiverende citat\n  clear     Ryd terminalen\n\n↑ / ↓: kommandohistorik · Tab: fuldfør kommando',
+          'Tilgængelige kommandoer:\n  about     Om Burak\n  projects  Se projekter\n  skills    Se teknologier\n  journey   Erfaring og uddannelse\n  contact   Kontaktoplysninger\n  wisdom    Motiverende citater\n  clear     Ryd terminalen\n\n↑ / ↓: kommandohistorik · Tab: fuldfør kommando',
       };
     case 'about':
       return {
