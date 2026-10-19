@@ -4,7 +4,7 @@ module.exports = {
   singleQuote: true,
   printWidth: 100,
   bracketSameLine: true,
-   htmlWhitespaceSensitivity: "ignore",
-  trailingComma: "all",
-  plugins: ["prettier-plugin-tailwindcss"],
+  htmlWhitespaceSensitivity: 'ignore',
+  trailingComma: 'all',
+  plugins: ['prettier-plugin-tailwindcss'],
 };

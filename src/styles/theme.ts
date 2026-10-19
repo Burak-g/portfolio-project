@@ -16,7 +16,11 @@ export const darkTheme = createTheme({
   },
   shape: { borderRadius: 3 },
   components: {
-    MuiCard: { styleOverrides: { root: { backgroundImage: 'none', border: '1px solid #2a3548', boxShadow: 'none' } } },
+    MuiCard: {
+      styleOverrides: {
+        root: { backgroundImage: 'none', border: '1px solid #2a3548', boxShadow: 'none' },
+      },
+    },
     MuiButton: { styleOverrides: { root: { borderRadius: 2 } } },
     MuiChip: { styleOverrides: { root: { borderRadius: 3 } } },
     MuiCssBaseline: { styleOverrides: { body: { backgroundColor: '#0c1018' } } },

@@ -12,15 +12,46 @@ export type TimelineEntry = {
 export const workExperience: TimelineEntry[] = [
   {
     id: '1',
-    title: 'Digital Marketing-konsulent',
-    company: 'Publico Kommunikation',
-    period: 'Oktober 2022 - November 2025',
+    title: 'Softwareudvikler',
+    company: 'Region Midtjylland, Digitalisering og IT',
+    period: 'Juli 2026 - Nu',
     description:
-      'I min nuværende rolle arbejder jeg bredt med digital marketing og webudvikling. Jeg opsætter og optimerer Google Ads-kampagner, tilpasser hjemmesideindhold i HubSpot CMS og WordPress (Divi og Elementor), og arbejder strategisk med email marketing i HubSpot. Derudover tilpasser jeg templates i Design Manager med fokus på konvertering og brugeroplevelse, og driver websiteprojekter i tæt samarbejde med designere, udviklere og tekniske partnere.',
+      'Som softwareudvikler hos Region Midtjylland arbejder jeg primært med frontendudvikling, hvor jeg er med til at skabe digitale løsninger, der gør arbejdsprocesser i sundhedsvæsenet nemmere og mere effektive.\n' +
+      '\n' +
+      'Mit primære fokus er React og TypeScript, som jeg bruger til at udvikle brugervenlige og genanvendelige komponenter. Jeg lægger vægt på at skabe løsninger, der ikke kun fungerer teknisk, men også giver mening for dem, der skal bruge dem i deres hverdag.\n' +
+      '\n' +
+      'Jeg er en del af et agilt team, hvor samarbejde, sparring og løbende forbedringer er en naturlig del af hverdagen. Samtidig er jeg nysgerrig på nye teknologier og arbejder aktivt med at integrere AI i mit udviklingsflow for at arbejde smartere og udvikle mig som softwareudvikler.',
     type: 'work',
   },
   {
     id: '2',
+    title: 'Studentermedhjælper',
+    company: 'Region Midtjylland, Digitalisering og IT',
+    period: 'April 2026 - Juni 2026',
+    description: '',
+    type: 'work',
+  },
+  {
+    id: '3',
+    title: 'Softwarepraktikant',
+    company: 'Region Midtjylland, Digitalisering og IT',
+    period: 'Januar 2026 - April 2026',
+    description: '',
+    type: 'work',
+  },
+  {
+    id: '4',
+    title: 'Digital Marketing-konsulent',
+    company: 'Publico Kommunikation',
+    period: 'Oktober 2022 - November 2025',
+    description:
+      'I min tidligere rolle arbejdede jeg bredt med digital marketing og webudvikling. Jeg stod for opsætning og optimering af Google Ads-kampagner, tilpasning af hjemmesideindhold i HubSpot CMS og WordPress (Divi og Elementor) samt strategisk arbejde med e-mailmarketing i HubSpot.\n' +
+      '\n' +
+      'Derudover tilpassede jeg templates i Design Manager med fokus på konvertering og brugeroplevelse og drev websiteprojekter i tæt samarbejde med designere, udviklere og tekniske samarbejdspartnere.',
+    type: 'work',
+  },
+  {
+    id: '5',
     title: 'Content Specialist',
     company: 'Factor X Adman',
     period: 'Juni 2021 - Juni 2022',
@@ -32,16 +63,16 @@ export const workExperience: TimelineEntry[] = [
 
 export const education: TimelineEntry[] = [
   {
-    id: '4',
+    id: '6',
     title: 'Datamatiker Online',
     company: 'UCL Erhvervsakademi og Professionshøjskole',
-    period: 'Februar 2024 - Juni 2026 (forventet afslutning)',
+    period: 'Februar 2024 - Juni 2026',
     description:
-      'Softwareudvikling med fokus på C#, .NET, SQL, Blazor og softwarearkitektur, herunder principper som SOLID, GRASP, MVVM og MVC. Gennem studiet har jeg opnået praktisk erfaring med at udvikle applikationer ved hjælp af moderne designmønstre og databasedesign. Jeg arbejder desuden med agile metoder som Scrum og deltager i samarbejdsprojekter, hvor der lægges vægt på clean code, skalerbarhed og vedligeholdbarhed.',
+      'Softwareudvikling med fokus på C#, .NET, SQL, React og softwarearkitektur, herunder principper som SOLID, GRASP og MVC. Gennem studiet har jeg opnået praktisk erfaring med at udvikle applikationer ved hjælp af moderne designmønstre og databasedesign. Jeg arbejder desuden med agile metoder som Scrum og deltager i samarbejdsprojekter, hvor der lægges vægt på clean code, skalerbarhed og vedligeholdbarhed.',
     type: 'education',
   },
   {
-    id: '5',
+    id: '7',
     title: 'Cand.Merc.Marketing',
     company: 'Aarhus BSS - Aarhus Universitet',
     period: 'September 2020 - Juni 2022',
