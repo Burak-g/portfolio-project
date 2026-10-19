@@ -29,9 +29,9 @@ export const workExperience: TimelineEntry[] = [
       { id: '3', title: 'Softwarepraktikant', period: 'Januar 2026 - April 2026' },
     ],
     description:
-      'Som softwareudvikler hos Region Midtjylland arbejder jeg primært med frontendudvikling, hvor jeg er med til at digitalisere og effektivisere arbejdsprocesser i sundhedsvæsenet. Jeg har fokus på at skabe brugervenlige løsninger, der både fungerer teknisk og giver mening for dem, der skal bruge dem i deres hverdag.',
+      'Jeg startede som softwarepraktikant og fortsatte efterfølgende som studentermedhjælper, inden jeg blev fastansat som softwareudvikler. Gennem mine forskellige roller har jeg primært arbejdet med frontendudvikling af digitale løsninger, der understøtter og effektiviserer arbejdsprocesser i sundhedsvæsenet.',
     highlights: [
-      'Udvikling af genanvendelige komponenter og brugergrænseflader med React og TypeScript.',
+      'Udvikling af UI og genanvendelige komponenter med React og TypeScript.',
       'Samarbejde i et agilt team med fokus på sparring og løbende forbedringer.',
       'Anvendelse af AI til at optimere mit udviklingsflow og styrke min faglige udvikling.',
     ],
