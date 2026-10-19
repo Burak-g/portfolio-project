@@ -97,4 +97,18 @@ export const education: TimelineEntry[] = [
     ],
     type: 'education',
   },
+  {
+    id: '8',
+    title: 'BA in Marketing and Management Communication',
+    company: 'Aarhus BSS - Aarhus Universitet',
+    period: 'September 2017 - Juni 2020',
+    description:
+      'En international bacheloruddannelse, der kombinerer kommunikation, marketing og forretningsforståelse. Uddannelsen har givet mig et solidt fundament inden for strategisk kommunikation, branding og forbrugeradfærd samt en forståelse for, hvordan virksomheder kommunikerer med deres målgrupper.',
+    highlights: [
+      'Planlægning og udvikling af kommunikations- og marketingstrategier.',
+      'Forståelse for branding, forbrugeradfærd og virksomheders kommunikation.',
+      'Projektledelse og kommunikation på tværs af organisationer og kulturer.',
+    ],
+    type: 'education',
+  },
 ];
