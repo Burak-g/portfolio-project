@@ -61,7 +61,7 @@ export function PageSection({ id, children, className = '' }: PageSectionProps) 
               reveal === 'pending'
                 ? 'motion-safe:opacity-0'
                 : reveal === 'visible'
-                  ? 'motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-bottom-[10px] motion-safe:fill-mode-both motion-safe:duration-[1500ms]'
+                  ? 'motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-bottom-[10px] motion-safe:fill-mode-both motion-safe:duration-[600ms]'
                   : undefined
             }>
             {children}

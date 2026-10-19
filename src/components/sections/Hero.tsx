@@ -14,7 +14,7 @@ export default function Hero() {
       <div className="container-wide relative z-10">
         <div className="flex flex-col gap-10 py-8 md:py-12 lg:flex-row lg:items-center">
           {/* Left: text (50%) */}
-          <div className="motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-bottom-[6px] min-w-0 motion-safe:duration-[1500ms] lg:w-1/2">
+          <div className="motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-bottom-[6px] min-w-0 motion-safe:duration-[600ms] lg:w-1/2">
             <div className="stack">
               <Heading level={1} className="text-4xl md:text-6xl">
                 Burak Gültekin<span className="text-primary-subtle-fg">.</span>
@@ -52,7 +52,7 @@ export default function Hero() {
           </div>
 
           {/* Right: terminal (50%) */}
-          <div className="motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-bottom-[6px] motion-safe:fill-mode-backwards min-w-0 motion-safe:duration-[1500ms] motion-safe:[animation-delay:100ms] lg:w-1/2">
+          <div className="motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-bottom-[6px] motion-safe:fill-mode-backwards min-w-0 motion-safe:duration-[600ms] motion-safe:[animation-delay:100ms] lg:w-1/2">
             <TerminalIntro
               className="w-full"
               // Optional props:
