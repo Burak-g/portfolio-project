@@ -78,16 +78,27 @@ export const education: TimelineEntry[] = [
     company: 'UCL Erhvervsakademi og Professionshøjskole',
     period: 'Februar 2024 - Juni 2026',
     description:
-      'Softwareudvikling med fokus på C#, .NET, SQL, React og softwarearkitektur, herunder principper som SOLID, GRASP og MVC. Gennem studiet har jeg opnået praktisk erfaring med at udvikle applikationer ved hjælp af moderne designmønstre og databasedesign. Jeg arbejder desuden med agile metoder som Scrum og deltager i samarbejdsprojekter, hvor der lægges vægt på clean code, skalerbarhed og vedligeholdbarhed.',
+      'En praksisorienteret uddannelse med fokus på programmering, systemudvikling og softwarearkitektur. Gennem uddannelsen har jeg opbygget et solidt fundament inden for udvikling af IT-løsninger, fra analyse af behov og design til implementering, test og kvalitetssikring.',
+    highlights: [
+      'Udvikling af applikationer med C#, .NET, React og SQL.',
+      'Softwarearkitektur, databasedesign og principper for vedligeholdbar kode.',
+      'Systemudvikling med fokus på brugerbehov, test og samarbejde i IT-projekter.',
+    ],
     type: 'education',
   },
+
   {
     id: '7',
-    title: 'Cand.Merc.Marketing',
+    title: 'Cand.merc. (Marketing)',
     company: 'Aarhus BSS - Aarhus Universitet',
     period: 'September 2020 - Juni 2022',
     description:
-      'Under kandidatuddannelsen Cand.Merc.Marketing, har jeg specialiseret mig i branding, forbrugeradfærd, markedsstrategi og digital markedsføring. Uddannelsen har givet mig en solid forståelse for, hvordan man omsætter indsigt og data til relevante strategiske initiativer. Jeg har arbejdet analytisk og forretningsorienteret med at udvikle løsninger, der skaber reel værdi og styrker relationen mellem organisationer og deres målgrupper.',
+      'En kandidatuddannelse med fokus på marketing, forbrugeradfærd og forretningsstrategi. Uddannelsen har givet mig en stærk forståelse for, hvordan mennesker tænker og handler, og hvordan man kan bruge data og indsigt til at udvikle strategier og skabe værdi for både virksomheder og deres kunder.',
+    highlights: [
+      'Analyse af forbrugeradfærd, kundebehov og trends.',
+      'Udvikling af strategier med fokus på kundeoplevelser, relationer og vækst.',
+      'Forståelse for digital udvikling og samspillet mellem teknologi, mennesker og forretning.',
+    ],
     type: 'education',
   },
 ];
