@@ -25,6 +25,35 @@ export default function TimelineList({ entries }: { entries: TimelineEntry[] }) 
               {entry.title}
             </Heading>
             <Text className="text-primary-subtle-fg mt-1">{entry.company}</Text>
+            {!!entry.roles?.length && (
+              <ol aria-label={`Stillinger hos ${entry.title}`} className="my-6 ml-1">
+                {entry.roles.map((role, roleIndex, roles) => (
+                  <li
+                    key={role.id}
+                    className={twJoin(
+                      'border-border relative border-l pl-5',
+                      roleIndex < roles.length - 1 && 'pb-5',
+                    )}>
+                    <span
+                      aria-hidden="true"
+                      className={twJoin(
+                        'ring-card absolute top-2 -left-1 size-2 rounded-full ring-4',
+                        roleIndex === 0 ? 'bg-primary' : 'bg-muted-fg',
+                      )}
+                    />
+                    <Heading
+                      level={4}
+                      className={twJoin(
+                        'font-sans text-base leading-6 font-medium',
+                        roleIndex > 0 && 'text-muted-fg',
+                      )}>
+                      {role.title}
+                    </Heading>
+                    <Text className="mt-1 font-mono text-xs leading-relaxed">{role.period}</Text>
+                  </li>
+                ))}
+              </ol>
+            )}
             <Text className="mt-3 max-w-[65ch] text-base leading-7">{entry.description}</Text>
             {!!entry.highlights?.length && (
               <div className="mt-5">

@@ -1,5 +1,11 @@
 export type TimelineType = 'work' | 'education';
 
+export type TimelineRole = {
+  id: string;
+  title: string;
+  period: string;
+};
+
 export type TimelineEntry = {
   id: string;
   title: string;
@@ -7,15 +13,21 @@ export type TimelineEntry = {
   period: string;
   description: string;
   highlights?: string[];
+  roles?: TimelineRole[];
   type: TimelineType;
 };
 
 export const workExperience: TimelineEntry[] = [
   {
     id: '1',
-    title: 'Softwareudvikler',
-    company: 'Region Midtjylland, Digitalisering og IT',
-    period: 'Juli 2026 - Nu',
+    title: 'Region Midtjylland',
+    company: 'Digitalisering og IT',
+    period: 'Januar 2026 - Nu',
+    roles: [
+      { id: '1', title: 'Softwareudvikler', period: 'Juli 2026 - Nu' },
+      { id: '2', title: 'Studentermedhjælper', period: 'April 2026 - Juni 2026' },
+      { id: '3', title: 'Softwarepraktikant', period: 'Januar 2026 - April 2026' },
+    ],
     description:
       'Som softwareudvikler hos Region Midtjylland arbejder jeg primært med frontendudvikling, hvor jeg er med til at digitalisere og effektivisere arbejdsprocesser i sundhedsvæsenet. Jeg har fokus på at skabe brugervenlige løsninger, der både fungerer teknisk og giver mening for dem, der skal bruge dem i deres hverdag.',
     highlights: [
@@ -23,22 +35,6 @@ export const workExperience: TimelineEntry[] = [
       'Samarbejde i et agilt team med fokus på sparring og løbende forbedringer.',
       'Anvendelse af AI til at optimere mit udviklingsflow og styrke min faglige udvikling.',
     ],
-    type: 'work',
-  },
-  {
-    id: '2',
-    title: 'Studentermedhjælper',
-    company: 'Region Midtjylland, Digitalisering og IT',
-    period: 'April 2026 - Juni 2026',
-    description: '',
-    type: 'work',
-  },
-  {
-    id: '3',
-    title: 'Softwarepraktikant',
-    company: 'Region Midtjylland, Digitalisering og IT',
-    period: 'Januar 2026 - April 2026',
-    description: '',
     type: 'work',
   },
   {
