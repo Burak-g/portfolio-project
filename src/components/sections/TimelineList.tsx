@@ -26,6 +26,22 @@ export default function TimelineList({ entries }: { entries: TimelineEntry[] }) 
             </Heading>
             <Text className="text-primary-subtle-fg mt-1">{entry.company}</Text>
             <Text className="mt-3 max-w-[65ch] text-base leading-7">{entry.description}</Text>
+            {!!entry.highlights?.length && (
+              <div className="mt-5">
+                {entry.type === 'work' && (
+                  <Heading level={4} className="font-sans text-sm font-semibold">
+                    Mine primære arbejdsopgaver
+                  </Heading>
+                )}
+                <ul className="text-muted-fg marker:text-primary mt-3 max-w-[65ch] list-disc space-y-2 pl-5">
+                  {entry.highlights.map((highlight) => (
+                    <li key={highlight}>
+                      <Text className="max-w-none text-base leading-7">{highlight}</Text>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </div>
         </li>
       ))}
