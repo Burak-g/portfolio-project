@@ -31,15 +31,15 @@ export default function Journey() {
                   Uddannelse
                 </Tab>
               </TabList>
-              <TabPanel
-                id="work"
-                className="motion-safe:animate-in motion-safe:fade-in px-6 pt-6 motion-safe:duration-200">
-                <TimelineList entries={workExperience} />
+              <TabPanel id="work" className="px-6 pt-6">
+                <div className="motion-safe:animate-in motion-safe:fade-in motion-safe:duration-200">
+                  <TimelineList entries={workExperience} />
+                </div>
               </TabPanel>
-              <TabPanel
-                id="education"
-                className="motion-safe:animate-in motion-safe:fade-in px-6 pt-6 motion-safe:duration-200">
-                <TimelineList entries={education} />
+              <TabPanel id="education" className="px-6 pt-6">
+                <div className="motion-safe:animate-in motion-safe:fade-in motion-safe:duration-200">
+                  <TimelineList entries={education} />
+                </div>
               </TabPanel>
             </Tabs>
           </CardContent>
