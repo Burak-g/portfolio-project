@@ -12,7 +12,7 @@ import { runTerminalCommand, terminalCommandNames } from '../../lib/terminalComm
 
 const defaultLines = [
   '> Initializing Burak...\n',
-  '> Turning caffeine into components...\n',
+  '> Checking the utility belt for missing dependencies...\n',
   '> Portfolio systems online.\n\n',
   '> Skriv help for at udforske portfolio.\n',
 ];
