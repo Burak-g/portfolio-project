@@ -1,5 +1,5 @@
 import gotorzImg from '../assets/images/gotorz-hero.jpg';
-
+import portfolioImg from '../assets/images/portfolio-project.jpg';
 export type Project = {
   id: string;
   title: string;
@@ -37,7 +37,7 @@ export const projects: Project[] = [
     title: 'Portfolio (React)',
     description:
       'Mit personlige portfolio-site bygget med React, TypeScript, Tailwind CSS og Intent UI. Fokus på genanvendelige komponenter, lyst og mørkt tema samt en interaktiv terminal.',
-    imageSrc: gotorzImg,
+    imageSrc: portfolioImg,
     imageAlt: 'Screenshot of Portfolio project',
     tech: ['React', 'TypeScript', 'Tailwind CSS', 'Intent UI', 'Vite'],
     githubHref: 'https://github.com/Burak-g/portfolio-project',
