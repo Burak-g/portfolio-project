@@ -30,8 +30,7 @@ export const projects: Project[] = [
       'SQLite',
       'Docker',
     ],
-    href: '#',
-    githubHref: '#',
+    githubHref: 'https://github.com/Burak-g/FullGotorz',
   },
   {
     id: 'portfolio',
@@ -41,7 +40,6 @@ export const projects: Project[] = [
     imageSrc: gotorzImg,
     imageAlt: 'Screenshot of Portfolio project',
     tech: ['React', 'TypeScript', 'Tailwind CSS', 'Intent UI', 'Vite'],
-    href: '#',
-    githubHref: '#',
+    githubHref: 'https://github.com/Burak-g/portfolio-project',
   },
 ];
