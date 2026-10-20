@@ -35,22 +35,15 @@ export default function ProjectCard({ project }: { project: Project }) {
       <CardContent className="flex-1">
         <Text className="text-base leading-relaxed">{project.description}</Text>
       </CardContent>
-      {(project.href || project.githubHref) && (
+      {project.githubHref && (
         <CardFooter className="flex flex-wrap gap-3">
-          {project.href && (
-            <Link href={project.href} className={buttonStyles({ intent: 'outline' })}>
-              Læs mere om projektet
-            </Link>
-          )}
-          {project.githubHref && (
-            <Link
-              href={project.githubHref}
-              aria-label={`Se ${project.title} på GitHub`}
-              className="text-muted-fg hover:text-primary-subtle-fg inline-flex min-h-11 items-center gap-2 rounded-sm px-3 text-sm transition-colors duration-200 hover:underline">
-              <FontAwesomeIcon icon={faGithub} aria-hidden="true" className="size-4" />
-              GitHub
-            </Link>
-          )}
+          <Link
+            href={project.githubHref}
+            aria-label={`Se ${project.title} på GitHub`}
+            className={buttonStyles({ intent: 'outline' })}>
+            <FontAwesomeIcon icon={faGithub} aria-hidden="true" className="size-4" />
+            GitHub
+          </Link>
         </CardFooter>
       )}
     </Card>
