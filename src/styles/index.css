@@ -17,14 +17,24 @@
     color-scheme: dark;
   }
   html {
+    overflow-x: hidden;
+    overscroll-behavior-x: none;
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
   }
   body {
+    overflow-x: clip;
+    overscroll-behavior-x: none;
+    width: 100%;
     margin: 0;
     background: var(--bg);
     color: var(--fg);
     font-family: var(--font-sans);
+  }
+  #root {
+    width: 100%;
+    min-width: 0;
+    overflow-x: clip;
   }
   h1,
   h2 {
