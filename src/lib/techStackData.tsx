@@ -1,38 +1,24 @@
-/* eslint-disable */
-// @ts-expect-error -- SVGs are transformed by vite-plugin-svgr at build time
-import BootstrapIcon from '../assets/tech/bootstrap.svg?react';
-// @ts-expect-error
+import IntentUiIcon from '../assets/tech/intentui.svg?react';
+import ShadcnLightIcon from '../assets/tech/shadcnui-light.svg?react';
+import ShadcnDarkIcon from '../assets/tech/shadcnui-dark.svg?react';
+import CodexIcon from '../assets/tech/codex.svg?react';
+import StorybookIcon from '../assets/tech/storybook.svg?react';
+import FigmaIcon from '../assets/tech/figma.svg?react';
+import SqlServerIcon from '../assets/tech/sqlserver.svg?react';
 import CSharpIcon from '../assets/tech/csharp.svg?react';
-// @ts-expect-error
-import CssIcon from '../assets/tech/css.svg?react';
-// @ts-expect-error
 import DotNetIcon from '../assets/tech/dotnet.svg?react';
-// @ts-expect-error
-import HtmlIcon from '../assets/tech/html.svg?react';
-// @ts-expect-error
-import JsIcon from '../assets/tech/js.svg?react';
-// @ts-expect-error
 import MariaDbIcon from '../assets/tech/mariadb.svg?react';
-// @ts-expect-error
-import MaterialUiIcon from '../assets/tech/materialui.svg?react';
-// @ts-expect-error
 import NextJsIcon from '../assets/tech/nextjs.svg?react';
-// @ts-expect-error
 import NodeJsIcon from '../assets/tech/nodejs.svg?react';
-// @ts-expect-error
 import PostgresIcon from '../assets/tech/postgresql.svg?react';
-// @ts-expect-error
 import ReactIcon from '../assets/tech/react.svg?react';
-// @ts-expect-error
 import TailwindCssIcon from '../assets/tech/tailwindcss.svg?react';
-// @ts-expect-error
-import ViteJsIcon from '../assets/tech/vitejs.svg?react';
-// @ts-expect-error
 import TypeScriptIcon from '../assets/tech/typescript.svg?react';
 
 export type TechIcon = {
   name: string;
   Icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  DarkIcon?: React.ComponentType<React.SVGProps<SVGSVGElement>>;
   align?: 'left' | 'right';
 };
 
@@ -45,34 +31,36 @@ export const techCategories: TechCategory[] = [
   {
     title: 'Frontend',
     icons: [
-      { name: 'HTML', Icon: HtmlIcon },
-      { name: 'CSS', Icon: CssIcon },
-      { name: 'JavaScript', Icon: JsIcon },
-      { name: 'TypeScript', Icon: TypeScriptIcon },
       { name: 'React', Icon: ReactIcon },
+      { name: 'TypeScript', Icon: TypeScriptIcon },
       { name: 'Next.js', Icon: NextJsIcon },
       { name: 'Tailwind CSS', Icon: TailwindCssIcon },
-      { name: 'Bootstrap', Icon: BootstrapIcon },
-      { name: 'Material UI', Icon: MaterialUiIcon },
+      { name: 'Intent UI', Icon: IntentUiIcon },
+      { name: 'shadcn/ui', Icon: ShadcnLightIcon, DarkIcon: ShadcnDarkIcon },
     ],
   },
   {
     title: 'Backend',
     icons: [
-      { name: 'Node.js', Icon: NodeJsIcon },
       { name: 'C#', Icon: CSharpIcon },
       { name: '.NET', Icon: DotNetIcon },
+      { name: 'Node.js', Icon: NodeJsIcon },
     ],
   },
   {
     title: 'Databases',
     icons: [
-      { name: 'MariaDB', Icon: MariaDbIcon },
+      { name: 'SQL Server', Icon: SqlServerIcon },
       { name: 'Postgres', Icon: PostgresIcon },
+      { name: 'MariaDB', Icon: MariaDbIcon },
     ],
   },
   {
     title: 'Tooling',
-    icons: [{ name: 'Vite', Icon: ViteJsIcon }],
+    icons: [
+      { name: 'Storybook', Icon: StorybookIcon },
+      { name: 'Figma', Icon: FigmaIcon },
+      { name: 'Codex', Icon: CodexIcon },
+    ],
   },
 ];

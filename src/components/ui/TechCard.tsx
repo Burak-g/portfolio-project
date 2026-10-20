@@ -14,7 +14,7 @@ export default function TechCard({ category }: { category: TechCategory }) {
       </CardHeader>
       <CardContent>
         <div className="grid grid-cols-2 gap-4">
-          {category.icons.map(({ name, Icon }) => (
+          {category.icons.map(({ name, Icon, DarkIcon }) => (
             <Tooltip key={name} delay={150}>
               <TooltipTrigger
                 aria-label={name}
@@ -25,9 +25,15 @@ export default function TechCard({ category }: { category: TechCategory }) {
                     'size-14 motion-safe:transition-transform motion-safe:duration-200 motion-safe:hover:scale-105 motion-safe:focus-visible:scale-105 sm:size-14 *:[svg]:size-10 sm:*:[svg]:size-10',
                 })}>
                 <Icon
-                  className="size-10 opacity-80 transition-opacity hover:opacity-100"
+                  className={`size-10 opacity-80 transition-opacity hover:opacity-100 ${DarkIcon ? 'dark:hidden' : ''}`}
                   aria-hidden="true"
                 />
+                {DarkIcon && (
+                  <DarkIcon
+                    className="hidden size-10 opacity-80 transition-opacity hover:opacity-100 dark:block"
+                    aria-hidden="true"
+                  />
+                )}
               </TooltipTrigger>
               <TooltipContent
                 arrow={false}
