@@ -1,4 +1,4 @@
-import IntentUiIcon from '../assets/tech/intentui.svg?react';
+import IntentUiAsset from '../assets/tech/intentui.svg?react';
 import ShadcnLightIcon from '../assets/tech/shadcnui-light.svg?react';
 import ShadcnDarkIcon from '../assets/tech/shadcnui-dark.svg?react';
 import CodexIcon from '../assets/tech/codex.svg?react';
@@ -14,6 +14,11 @@ import PostgresIcon from '../assets/tech/postgresql.svg?react';
 import ReactIcon from '../assets/tech/react.svg?react';
 import TailwindCssIcon from '../assets/tech/tailwindcss.svg?react';
 import TypeScriptIcon from '../assets/tech/typescript.svg?react';
+
+// The source SVG lacks a viewBox, which is required to scale its 200px artwork.
+function IntentUiIcon(props: React.SVGProps<SVGSVGElement>) {
+  return <IntentUiAsset viewBox="0 0 200 200" {...props} />;
+}
 
 export type TechIcon = {
   name: string;
