@@ -110,15 +110,6 @@
         @apply mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-12;
     }
 
-    .container-medium {
-        @apply mx-auto w-full max-w-5xl px-6;
-    }
-
-    .container-tight,
-    .container-narrow {
-        @apply mx-auto w-full max-w-3xl px-6;
-    }
-
     .stack {
         @apply space-y-6;
     }
@@ -132,8 +123,7 @@
     }
 
     .text-muted,
-    .muted,
-    .section-lead {
+    .muted {
         color: var(--muted-fg);
     }
 
@@ -212,14 +202,6 @@
     .nav-link:focus-visible::after,
     .nav-link[data-focus-visible]::after {
         transform: scaleX(1);
-    }
-
-    .hero-kicker {
-        font-family: var(--font-mono);
-        font-size: 0.7rem;
-        letter-spacing: 0.2em;
-        text-transform: uppercase;
-        color: var(--primary-subtle-fg);
     }
 
     .terminal-panel {
