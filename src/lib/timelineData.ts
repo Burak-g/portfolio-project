@@ -85,7 +85,7 @@ export const education: TimelineEntry[] = [
 
   {
     id: '7',
-    title: 'Cand.merc. (Marketing)',
+    title: 'Cand.merc marketing',
     company: 'Aarhus BSS - Aarhus Universitet',
     period: 'September 2020 - Juni 2022',
     description:
