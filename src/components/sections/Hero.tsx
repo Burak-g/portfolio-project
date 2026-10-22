@@ -21,7 +21,7 @@ export default function Hero() {
               </Heading>
 
               <Text className="text-fg text-2xl leading-snug font-semibold md:text-3xl">
-                Softwareudvikler og <span className="">digital marketing-konsulent</span>
+                Softwareudvikler og <span className="">cand.merc i marketing</span>
               </Text>
 
               <Text className="text-muted-fg">

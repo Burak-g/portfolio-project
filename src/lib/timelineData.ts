@@ -29,11 +29,11 @@ export const workExperience: TimelineEntry[] = [
       { id: '3', title: 'Softwarepraktikant', period: 'Januar 2026 - April 2026' },
     ],
     description:
-      'Jeg startede som softwarepraktikant og fortsatte efterfølgende som studentermedhjælper, inden jeg blev fastansat som softwareudvikler. Gennem mine forskellige roller har jeg primært arbejdet med frontendudvikling af digitale løsninger, der understøtter og effektiviserer arbejdsprocesser i sundhedsvæsenet.',
+      'Jeg startede som softwarepraktikant og fortsatte efterfølgende som studentermedhjælper, inden jeg blev ansat som softwareudvikler. Gennem mine forskellige roller har jeg primært arbejdet med frontendudvikling af digitale løsninger, der understøtter og effektiviserer arbejdsprocesser i sundhedsvæsenet.',
     highlights: [
       'Udvikling af UI og genanvendelige komponenter med React og TypeScript.',
-      'Samarbejde i et agilt team med fokus på sparring og løbende forbedringer.',
-      'Anvendelse af AI til at optimere mit udviklingsflow og styrke min faglige udvikling.',
+      'Arbejde med API-integrationer og samarbejde om løsninger på tværs af frontend og backend.',
+      'Deltagelse i agile udviklingsprocesser med code reviews, sparring og løbende forbedringer.',
     ],
     type: 'work',
   },
@@ -46,7 +46,7 @@ export const workExperience: TimelineEntry[] = [
       'Hos Publico Kommunikation arbejdede jeg med digital marketing og webudvikling med fokus på at skabe brugervenlige digitale løsninger og styrke virksomheders online tilstedeværelse. Rollen kombinerede teknisk arbejde med strategisk rådgivning og tæt samarbejde med designere, udviklere og eksterne samarbejdspartnere.',
     highlights: [
       'Udvikling og tilpasning af websites i HubSpot CMS og WordPress med fokus på brugeroplevelse og konvertering.',
-      'Planlægning og optimering af Google Ads-kampagner og e-mailmarketing.',
+      'Strategisk rådgivning om digitale løsninger samt planlægning og optimering af Google Ads-kampagner og e-mailmarketing.',
       'Koordinering af websiteprojekter i samarbejde med designere, udviklere og tekniske partnere.',
     ],
     type: 'work',
