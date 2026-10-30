@@ -13,7 +13,7 @@ export default function TechCard({ category }: { category: TechCategory }) {
         <span aria-hidden="true" className="bg-primary mt-3 block h-0.5 w-8" />
       </CardHeader>
       <CardContent>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 place-items-center gap-4">
           {category.icons.map(({ name, Icon, DarkIcon }) => (
             <Tooltip key={name} delay={150}>
               <TooltipTrigger
