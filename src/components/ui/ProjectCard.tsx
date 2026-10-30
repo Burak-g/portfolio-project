@@ -36,7 +36,7 @@ export default function ProjectCard({ project }: { project: Project }) {
         <Text className="text-base leading-relaxed">{project.description}</Text>
       </CardContent>
       {project.githubHref && (
-        <CardFooter className="flex flex-wrap gap-3">
+        <CardFooter className="flex flex-wrap justify-center gap-3">
           <Link
             href={project.githubHref}
             aria-label={`Se ${project.title} på GitHub`}
